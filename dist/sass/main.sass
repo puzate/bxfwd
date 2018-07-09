@@ -1,0 +1,716 @@
+@import "_font.sass"
+@import "_vars.sass"
+body
+	font-family: $pt-reg
+	font-size: 16px
+	line-height: 16px
+	color: $gunmetal
+.wrapper	
+	max-width: 1920px
+	margin: 0 auto
+	height: auto
+	overflow: hidden
+header
+	background-color: $white-two
+	z-index: 103
+	position: relative
+	box-shadow: 8px 20px 34px 0 rgba(48, 49, 51, 0.09)
+.header-container
+	max-width: 1300px
+	margin: 0 auto
+	padding: 17px 0 20px
+	height: auto
+.home-short-info_menu
+	display: none!important
+.header_info_calculator
+	display: none!important
+.header_info
+	vertical-align: middle
+	text-align: right
+.header_info_calculator,
+.header_info_time,
+.header_info_login,
+.header_info_lang
+	text-align: left
+	display: inline-block
+	vertical-align: middle
+.header_info_calculator
+	margin-right: 20px
+.header_info_calculator_btn
+	outline: 0
+	border: none
+	background-color: transparent
+	padding: 0
+	svg
+		width: 25px
+		height: 40px
+.header_info_time
+.header_info_time_img
+	margin-bottom: 0
+	display: inline-block
+	margin-right: 12px
+	svg
+		width: 35px
+		height: 35px
+		vertical-align: middle
+.header_info_time_cont
+	display: inline-block
+	vertical-align: middle
+	margin-right: 30px
+.header_info_time_cities
+	vertical-align: middle
+	display: inline-block
+	margin-bottom: 0
+	.__city
+		display: block
+		vertical-align: middle
+		text-transform: uppercase
+		margin-right: 20px
+		font-size: 12px
+		line-height: 1.33
+		letter-spacing: 0.4px
+		color: $cerise
+.header_info_time_times
+	display: inline-block
+	vertical-align: middle
+	margin-bottom: 0
+	.__time
+		display: block
+		vertical-align: middle
+		font-size: 12px
+		line-height: 1.33
+		letter-spacing: 0.4px
+		color: $deep-sky-blue
+		text-indent: 20px
+		word-spacing: 10px
+		margin-left: -10px
+.header_info_login
+	border: 1px solid $deep-sky-blue
+	border-radius: 4px
+	font-size: 0
+	margin-right: 25px
+	transition: 0.3s ease all
+.header_info_login_sign-up,
+.header_info_login_sign-in
+	outline: 0
+	border: none
+	background-color: transparent
+	font-size: 16px
+	font-family: $pt-bold
+	line-height: 1.75
+	padding: 7px 12px
+	text-transform: uppercase
+	transition: 0.3s ease all
+.header_info_login_sign-up
+	background-color: $deep-sky-blue
+	color: $white-two
+.header_info_login_sign-in
+	color: $deep-sky-blue
+.header_info_lang
+	.header_info_lang_active
+		padding: 10px 11px
+		color: $cerise
+		font-size: 17px
+		font-family: $pt-bold
+		letter-spacing: normal
+		cursor: pointer
+		text-transform: uppercase
+		border-radius: 50px
+		border: 1px solid $cerise
+// MENU display none
+.home-short-info_menu_list
+	display: none
+// _______
+.home-short-info_bgi-imgs
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	z-index: -1
+	overflow: hidden
+	width: 1920px
+.home-short-info_bgi-imgs_cloud
+	position: relative
+	display: inline-block
+	width: 70%
+	height: 1000px
+	vertical-align: top
+	svg
+		z-index: -2
+		position: absolute
+		top: 0
+		left: 0
+.home-short-info_bgi-imgs_line
+	display: inline-block
+	position: relative
+	width: 10%
+	vertical-align: top
+	height: 1000px
+	svg
+		z-index: -1
+		position: absolute
+		top: 0
+		left: -1338px
+		height: 1000px
+.home-short-info_bgi-imgs_city
+	position: absolute
+	top: 0
+	right: 0
+	svg
+		z-index: -3
+		position: relative
+.home-short-info
+	max-width: 100%
+	margin: 0 auto
+	height: auto
+	position: relative
+	z-index: 101
+	overflow: hidden
+.home-short-info_container
+	max-width: 1300px
+	margin: 0 auto
+	position: relative
+.home-short-info_menu
+	top: 55px
+	left: 10px
+	position: absolute
+.home-short-info_menu_btn
+.home-short-info_menu_btn-button
+	outline: 0
+	border: 1px solid $deep-sky-blue
+	border-radius: 50px
+	padding: 11px 
+	background-color: transparent
+	span.__menu-btn
+		width: 21px
+		height: 3px
+		border-radius: 10px
+		margin: 3px auto
+		display: block
+		background-color: $deep-sky-blue
+		&:last-child
+			width: 10px
+			margin-left: 0
+			transition: 0.3s ease width
+.home-short-info_describe
+	padding-top: 60px
+	margin-bottom: 45px
+.home-short-info_describe_head-title
+	.__title
+		font-size: 18px
+		line-height: 1.56
+		color: $black
+		margin: 0
+.home-short-info_describe_title
+	margin-bottom: 75px
+	.__title
+		font-size: 52px
+		letter-spacing: -0.4px
+		color: $dark-sea-green
+		font-family: $pt-bold
+		line-height: 1.38
+.home-short-info_describe_step-title
+	position: relative
+	padding: 0 80px 20px
+	border-radius: 8px
+	display: inline-block
+	max-width: 460px
+	border: 2px solid $deep-sky-blue
+	.__title
+		position: absolute
+		left: 50%
+		top: -20px
+		white-space: nowrap
+		font-size: 28px
+		line-height: 1
+		color: $deep-sky-blue
+		text-transform: uppercase
+		transform: translateX(-50%)
+		padding: 5px 20px
+		margin: 0
+		background-color: $white
+	.__describe
+		margin-top: 40px
+		font-size: 20px
+		line-height: 1.4
+		color: $cerise
+		text-align: center
+	img
+		position: absolute
+		bottom: -27px
+		right: -43px
+.home-short-info_describe_steps
+	margin-top: 60px
+.home-short-info_describe_steps_container
+.home-short-info_describe_steps_container_position
+	display: inline-block
+	max-width: 49.5%
+	margin-bottom: 40px
+.home-short-info_describe_steps_container_position_img
+	display: inline-block
+	height: auto
+	min-width: 57px
+	vertical-align: top
+.home-short-info_describe_steps_container_position_content
+	display: inline-block
+	height: auto
+	max-width: 75%
+	vertical-align: top
+	padding-right: 25px
+	.__title
+		font-size: 17px
+		font-family: $pt-bold
+		color: $deep-sky-blue
+		margin-top: 15px
+		margin-bottom: 15px
+	.__content
+		font-size: 12px
+		font-family: $pt-bold
+		line-height: 1.5
+		padding-bottom: 20px
+		max-height: 55px
+		overflow: hidden
+		color: $gunmetal
+		transition: 0.6s ease all
+		background-color: $white
+		&.show
+			height: auto
+			max-height: 500px
+	.__link
+		color: $dodger-blue
+		font-size: 12px
+		font-family: $pt-bold
+		outline: 0
+		border: none
+		background-color: transparent
+.home-short-info_img
+	text-align: right
+	.__girl-img
+		display: inline-block
+		padding-top: 370px
+.home-short-info_background-img
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 99
+.home-reasons
+	margin-top: 20px
+	background-image: url(../img/cloud-stroke.svg)
+	background-repeat: no-repeat
+	background-position: bottom
+	padding-bottom: 200px
+	margin-bottom: 50px
+.__visible-animate
+	opacity: 1
+.home-reasons_title
+	>.__title
+		font-size: 40px
+		line-height: 1.6
+		font-family: $pt-bold
+		text-align: center
+		color: $dark-sea-green
+		max-width: 72%
+		margin: 0 auto
+	&.visible
+		>.__title
+			opacity: 1
+.home-reasons_reason-container
+	>.__title
+		font-size: 20px
+		color: $gunmetal
+		height: 24px
+		text-align: center
+		margin: 20px auto 30px
+.home-reasons_reason_position
+	position: relative
+	padding-left: 40px
+	padding-top: 50px
+	margin-bottom: 50px
+	>.__number
+		color: $sky
+		position: absolute
+		top: 50px
+		left: -10px
+		font-size: 150px
+		opacity: 0.25
+	>.__title
+		font-size: 20px
+		font-family: $pt-bold
+		color: $gunmetal
+		margin-bottom: 15px
+	>.__content
+		font-size: 16px
+		color: $gunmetal
+		line-height: 1.38
+.home-reasons_reason_register
+	text-align: center
+	margin-top: 20px
+.home-reasons_reason_register_btn
+	outline: 0
+	border-radius: 8px
+	box-shadow: 4px 5px 15px 0 rgba(0, 0, 0, 0.5)
+	background-color: $deep-rose
+	border: solid 2px $white
+	color: $white
+	font-size: 16px
+	padding: 10px 35px
+	text-transform: uppercase
+	transition: 0.3s ease all
+.home-services
+	padding-bottom: 30px
+	position: relative
+	border-bottom: 2px solid $deep-sky-blue
+	margin-bottom: 150px
+	background-image: url(../img/city-2.svg)
+	background-position: bottom
+	background-repeat: no-repeat
+.home-services_title
+	margin-bottom: 80px
+	.__title
+		margin: 0
+		font-size: 40px
+		font-family: $pt-bold
+		color: $dark-sea-green
+		line-height: 1.3
+		text-align: center
+.home-services_container
+	margin-bottom: 00px
+.home-services_position
+	border: 2px solid $deep-sky-blue
+	height: 138px
+	border-radius: 8px
+	text-align: center
+	position: relative
+	margin-bottom: 80px
+	background-color: $white
+	>.__title
+		position: absolute
+		top: -30px
+		left: 50%
+		width: 58%
+		transform: translateX(-50%)
+		color: $deep-sky-blue
+		font-size: 22px
+		font-family: $pt-bold
+		line-height: 1.27
+		padding: 5px 15px
+		background-color: $white
+		text-transform: uppercase
+	>.__content
+		color: $charcoal-grey
+		font-size: 18px
+		max-width: 80%
+		margin: 60px auto 0
+		line-height: 21px
+.home-services_calculate-button
+	text-align: center
+.home-services_calculate-button_btn
+	border-radius: 8px
+	box-shadow: 4px 5px 15px 0 rgba(0, 0, 0, 0.5)
+	background-color: $deep-rose
+	border: solid 2px $white
+	font-size: 16px
+	color: $white
+	text-transform: uppercase
+	transition: 0.3s ease all
+	padding: 10px 35px
+	&:focus
+		outline: 0
+.home-payments-method
+	margin-bottom: 130px
+.home-payments-method_title
+	margin-bottom: 80px
+	>.__title
+		margin: 0
+		max-width: 80%
+		margin: 0 auto
+		text-align: center
+		line-height: 1.3
+		color: $dark-sea-green
+		font-size: 40px
+		font-family: $pt-bold
+.home-payments-method_position
+	padding: 30px 25px 0
+	height: 245.1px
+	border-radius: 5px
+	background-color: $white
+	border: solid 2px $deep-sky-blue
+.home-payments-method_position_img
+	margin-bottom: 40px
+	text-align: center
+	height: 40px
+	img
+		display: inline-block
+		&.__mc
+			float: right
+			margin-top: -5px
+		&.__visa
+			float: left
+.home-service-info
+	height: 290px
+	position: relative
+	padding-top: 68px
+	background-image: url(../img/city-3.svg)
+	
+.home-service-info_position
+	margin: 0 30px 
+	>.__title
+		margin-bottom: 9px
+		line-height: 1.39
+		color: $deep-sky-blue
+		font-size: 23px
+	>.__describe
+		color: $black
+		font-size: 16px
+		line-height: 1.69
+.home-about-us
+	padding-top: 174px
+.home-about-us_content
+	margin-top: 92px
+	>.__title
+		font-size: 53px
+		color: $dark-sea-green
+		margin-bottom: 39px
+		margin-top: 0
+	>.__content
+		color: $black
+		line-height: 1.44
+		font-size: 16px
+		margin-bottom: 20px
+		max-width: 92%
+.home-about-us_feedback-form
+	border-radius: 8px
+	background-color: $white
+	border: solid 2px $deep-sky-blue
+	margin-left: 60px
+	padding: 76px 48px 68px
+	form
+		p
+			margin-bottom: 39px
+			&:last-child
+				margin-bottom: 0
+			label
+				display: block
+				font-size: 12px
+				color: $deep-sky-blue
+				line-height: 2.08
+				text-transform: uppercase
+			input
+				display: block
+				width: 100%
+				border: none
+				font-size: 16px
+				line-height: 1.56
+				color: $greyish-brown
+				border-bottom: solid 2px $deep-sky-blue
+				&:focus
+					outline: 0
+			textarea
+				resize: none
+				width: 100%
+				border: none
+				font-size: 16px
+				line-height: 1.56
+				color: $greyish-brown
+				height: 100px
+				border-bottom: solid 2px $deep-sky-blue
+				&:focus
+					outline: 0
+			button
+				color: $white
+				text-transform: uppercase
+				font-size: 16px
+				line-height: 1.56
+				padding: 10px 15px
+				outline: 0
+				border-radius: 4px
+				background-color: $deep-sky-blue
+				border: none
+.home-start-shopping
+	margin-top: 100px
+	margin-bottom: 70px
+.home-start-shopping_title
+	text-align: center
+	>.__title
+		font-size: 52px
+		font-family: $pt-bold
+		letter-spacing: -0.4px
+		color: $gunmetal
+		margin-bottom: 50px
+	>.__btn
+		box-shadow: 4px 5px 15px 0 rgba(0, 0, 0, 0.5)
+		border-radius: 9px
+		border: 2px solid $white
+		background-color: $deep-rose
+		color: $white
+		text-transform: uppercase
+		font-size: 16px
+		padding: 10px 35px
+		transition: 0.3s ease all
+		&:focus
+			outline: 0
+footer
+	margin-top: 50px
+.footer_content_position
+	>.__title
+		font-size: 16px
+		color: $deep-sky-blue
+		font-family: $pt-bold
+		margin-bottom: 20px
+		margin-top: 0
+	>.__list-info
+		list-style-type: none
+		margin: 0
+		padding: 0
+		li
+			font-size: 14px
+			a
+				color: $gunmetal
+				padding: 10px 0
+				display: inline-block
+				&:focus
+					outline: 0
+					text-decoration: none
+			&:first-child
+				a
+					padding-top: 0
+			&:last-child
+				a
+					padding-bottom: 0
+	.footer_content_position_imgs
+		max-width: 220px
+		a	
+			display: inline-block
+			height: 47px
+			width: 80px
+			border: solid 1px $pale-blue
+			background-color: $ice-blue
+			border-radius: 5px
+			text-align: center
+			line-height: 47px
+			margin-right: 24px
+			margin-bottom: 16px
+			img
+				max-width: 100%
+				margin: 0 auto
+				height: auto
+				// line-height: 47px
+				vertical-align: middle
+			&:hover
+				text-decoration: none
+	>.__list-soc
+		list-style-type: none
+		margin: 0
+		padding: 0
+		li
+			display: inline-block
+			position: relative
+			>.__tooltip
+				position: absolute
+				top: -30px
+				left: -25px
+				opacity: 0
+				transition: 0.3s ease opacity
+				color: $white
+				padding: 4px 8px
+				background-color: $black
+				border-radius: 4px
+				&:after
+					content: ''
+					position: absolute
+					bottom: -7px
+					left: 50%
+					transform: translateX(-50%)
+					border-style: solid
+					border-width: 7px 7px 0 7px
+					border-color: #000000 transparent transparent transparent
+			&:hover
+				>.__tooltip
+					opacity: 1
+	>.__tel-title
+		color: $gunmetal
+		font-size: 14px
+		font-family: $pt-bold
+		margin-bottom: 18px
+	>.__tel
+		font-size: 14px
+		color: $gunmetal
+		margin-bottom: 18px
+		a
+			color: $gunmetal
+			&:hover
+				text-decoration: none
+	>.__address-title
+		font-size: 14px
+		color: $gunmetal
+		margin-bottom: 18px
+		font-family: $pt-bold	
+	.__address
+		margin-bottom: 18px
+		font-size: 14px
+		color: $gunmetal
+.footer-foot
+	padding: 10px 0
+	vertical-align: middle
+	padding-top: 170px
+	background-image: url(../img/city-4.svg)
+	background-position: top
+	background-repeat: no-repeat	
+.footer-foot_coptyright
+	display: inline-block
+	vertical-align: middle
+	margin-top: 20px
+	p
+		font-size: 10px
+		color: $gunmetal
+		margin-bottom: 0
+.footer-foot_logo
+	vertical-align: middle
+	margin-top: 20px
+	display: inline-block
+	text-align: center
+	a
+		display: block
+		text-align: center
+		img
+			margin: 0 auto
+			max-height: 24px
+.modals-container
+	visibility: 0
+.modal_container
+	max-width: 80vw
+	margin: 5vw auto 3vw
+	max-height: 80vh
+	overflow-y: auto
+	overflow-x: hidden
+	width: auto
+	padding: 35px 40px
+	background-color: $white
+	color: $black
+	border: 2px solid $deep-sky-blue
+	position: relative
+	.__title
+		font-size: 26px
+		color: $black
+		text-transform: uppercase
+		margin: 20px autp 30px
+		text-align: center
+		font-family: $pt-bold
+	.__content
+	.__modal-close
+		position: fixed
+		top: 4.2vw
+		right: 10vw
+		outline: 0
+		border: 1px solid $dark-sea-green
+		background-color: $deep-sky-blue
+		color: $white
+		font-size: 50px
+		padding: 12px 7px
+		border-radius: 50px
+.header_info_menu-mobile
+	display: none
+
+@import "_animation.sass"
+@import "_hover.sass"
+@import "_media.sass"

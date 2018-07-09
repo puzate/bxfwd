@@ -1,0 +1,2059 @@
+@import "_font.sass"
+@import "_vars.sass"
+body
+	font-family: $pt-reg
+	font-size: 16px
+	line-height: 16px
+	color: $gunmetal
+	&.o-hidden
+		overflow: hidden
+		margin-right: 17px
+		z-index: 1000
+		header
+			z-index: 2
+		.__shadow
+			z-index: 120
+			opacity: 1
+			visibility: visible
+	.__shadow
+		background-color: rgba(0,0,0, 0.8)
+		// z-index: -1
+		opacity: 0
+		position: fixed
+		top: 0
+		bottom: 0
+		right: 0
+		left: 0
+		visibility: hidden
+		transition: 0.4s ease all
+.wrapper	
+	max-width: 1920px
+	margin: 0 auto
+	height: auto
+	overflow: hidden
+header
+	background-color: $white-two
+	z-index: 103
+	position: relative
+	box-shadow: 8px 20px 34px 0 rgba(48, 49, 51, 0.09)
+.header-container
+	max-width: 1300px
+	margin: 0 auto
+	padding: 17px 0 20px
+	height: auto
+.header_logo
+	padding-top: 5px
+.header_info_menu_main
+	display: inline-block
+	text-align: left
+.header-open_menu
+	posa+t0+l0
+.header_info_menu_main_list
+	text-align: left
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: flex-start
+	justify-content: space-between
+	padding: 0
+	margin: 0 auto
+	li
+		text-align: left
+		display: inline-block
+		margin: 0 5px
+		&:first-child
+			margin-left: 0
+		&:last-child
+			margin-right: 0
+		a
+			display: block
+			text-transform: uppercase
+			font-size: 12px
+			color: $gunmetal
+			letter-spacing: 0px
+			font-family: $pt-bold
+			transition: 0.3s ease all
+.home-short-info-main_container
+	position: relative
+	max-width: 1300px
+	margin: 0 auto
+.home-short-info-main
+	position: absolute
+	top: 0px
+	left: 10px
+	width: 100px
+	height: 100px
+	z-index: 999
+.home-short-info_menu_btn
+	position: relative
+	z-index: 2
+.home-short-info_menu_list_container
+	position: fixed
+	left: 0
+	top: 0
+	bottom: 0
+	transform: translate3d(-150vw,0,0)
+	transition: 0.4s ease all
+	z-index: 1
+	&.__open
+		transform: translate3d(0,0,0)
+		z-index: 131
+		.__container
+			z-index: 121
+	.__container
+		overflow-y: auto
+		min-width: 35vw
+		background-color: $white
+		max-width: 500px
+		padding-top: 30px
+		text-align: center
+		height: 100%
+		position: relative
+		&::-webkit-scrollbar
+			width: 5px
+		&::-webkit-scrollbar-track
+			background-color: $white
+			border-radius: 8px
+		&::-webkit-scrollbar-thumb
+			background-color: $cerise
+			border-radius: 8px
+		&::-webkit-scrollbar
+			width: 5px
+			background-color: $white
+			border-radius: 8px
+		&::-webkit-scrollbar-button
+		.__btn-close
+			position: absolute
+			right: 10px
+			top: 10px
+			.__btn
+				background-color: transparent
+				outline: 0
+				border: none
+				color: $cerise
+				font-size: 30px
+		.__logo
+			margin-bottom: 30px
+			img
+				margin: 0 auto
+		.__nav
+			.__list
+				list-style-type: none
+				margin: 0
+				padding: 0
+				li
+					margin: 5px 0
+					a
+						color: $deep-sky-blue
+						transition: 0.4s ease all
+						&:hover
+							text-decoration: none
+							color: $cerise
+.header_info
+	align-items: center
+	justify-content: space-between
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+.header_info_calculator,
+.header_info_time,
+.header_info_login,
+.header_info_lang
+	text-align: left
+	display: inline-block
+	vertical-align: middle
+.header_info_calculator_btn
+	outline: 0
+	border: none
+	background-color: transparent
+	padding: 0
+	display: block
+	svg
+		width: 25px
+		height: 40px
+.header_info_time_img
+	margin-bottom: 0
+	display: inline-block
+	svg
+		width: 35px
+		height: 35px
+		vertical-align: middle
+.header_info_time_cont
+	display: inline-block
+	vertical-align: middle
+.header_info_time_cities
+	vertical-align: middle
+	display: inline-block
+	margin-bottom: 0
+	.__city
+		display: block
+		vertical-align: middle
+		text-transform: uppercase
+		margin-right: 20px
+		font-size: 12px
+		line-height: 1.33
+		letter-spacing: 0.4px
+		color: $cerise
+.header_info_time_times
+	display: inline-block
+	vertical-align: middle
+	margin-bottom: 0
+	.__time
+		display: block
+		vertical-align: middle
+		font-size: 12px
+		line-height: 1.33
+		letter-spacing: 0.4px
+		color: $deep-sky-blue
+		text-indent: 20px
+		word-spacing: 10px
+		margin-left: -10px
+.header_info_login
+	border: 1px solid $deep-sky-blue
+	border-radius: 4px
+	font-size: 0
+	transition: 0.3s ease all
+	.__balance
+		display: none
+	.__icon-user
+		display: none
+	&.login
+		border: none
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: space-between
+		.header_info_login_sign-up,
+		.header_info_login_sign-in
+			display: none
+		.__balance
+			max-width: 62px
+			display: inline-block
+			font-size: 12px
+			line-height: 1.33
+			font-family: $pt-bold
+			color: $deep-sky-blue
+			margin-right: 10px
+		.__icon-user
+			display: inline-block
+.header_info_login_sign-up,
+.header_info_login_sign-in
+	outline: 0
+	border: none
+	display: inline-block
+	background-color: transparent
+	font-size: 16px
+	font-family: $pt-bold
+	line-height: 1.75
+	padding: 7px 12px
+	text-transform: uppercase
+	transition: 0.3s ease all
+.header_info_login_sign-up
+	background-color: $deep-sky-blue
+	color: $white-two
+.header_info_login_sign-in
+	color: $deep-sky-blue
+.header_info_lang
+	.header_info_lang_active
+		padding: 10px 11px
+		color: $cerise
+		font-size: 17px
+		font-family: $pt-bold
+		letter-spacing: normal
+		cursor: pointer
+		text-transform: uppercase
+		border-radius: 50px
+		border: 1px solid $cerise
+// _______
+.home-short-info_bgi-imgs
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	z-index: -1
+	overflow: hidden
+	width: 1920px
+.home-short-info_bgi-imgs_cloud
+	position: relative
+	display: inline-block
+	width: 70%
+	height: 1000px
+	vertical-align: top
+	svg
+		z-index: -2
+		position: absolute
+		top: 0
+		left: 0
+.home-short-info_bgi-imgs_line
+	display: inline-block
+	position: relative
+	width: 10%
+	vertical-align: top
+	height: 1000px
+	svg
+		z-index: -1
+		position: absolute
+		top: 0
+		left: -1338px
+		height: 1000px
+.home-short-info_bgi-imgs_city
+	position: absolute
+	top: 0
+	right: 0
+	svg
+		z-index: -3
+		position: relative
+.home-short-info
+	max-width: 100%
+	margin: 0 auto
+	height: auto
+	position: relative
+	z-index: 101
+	overflow: hidden
+.home-short-info_container
+	max-width: 1300px
+	margin: 0 auto
+	position: relative
+.home-short-info_menu
+	top: 55px
+	left: 10px
+	position: absolute
+.home-short-info_menu_btn
+.home-short-info_menu_btn-button
+	outline: 0
+	border: 1px solid $deep-sky-blue
+	border-radius: 50px
+	padding: 11px 
+	background-color: transparent
+	span.__menu-btn
+		width: 21px
+		height: 3px
+		border-radius: 10px
+		margin: 3px auto
+		display: block
+		background-color: $deep-sky-blue
+		&:last-child
+			width: 10px
+			margin-left: 0
+			transition: 0.3s ease width
+.home-short-info_describe
+	padding-top: 60px
+	margin-bottom: 45px
+.home-short-info_describe_head-title
+	.__title
+		font-size: 18px
+		line-height: 1.56
+		color: $black
+		margin: 0
+.home-short-info_describe_title
+	margin-bottom: 75px
+	.__title
+		font-size: 52px
+		letter-spacing: -0.4px
+		color: $dark-sea-green
+		font-family: $pt-bold
+		line-height: 1.38
+.home-short-info_describe_step-title
+	position: relative
+	padding: 0 80px 20px
+	border-radius: 8px
+	display: inline-block
+	max-width: 460px
+	border: 2px solid $deep-sky-blue
+	.__title
+		position: absolute
+		left: 50%
+		top: -20px
+		white-space: nowrap
+		font-size: 28px
+		line-height: 1
+		color: $deep-sky-blue
+		text-transform: uppercase
+		transform: translateX(-50%)
+		padding: 5px 20px
+		margin: 0
+		background-color: $white
+	.__describe
+		margin-top: 40px
+		font-size: 20px
+		line-height: 1.4
+		color: $cerise
+		text-align: center
+	img
+		position: absolute
+		bottom: -27px
+		right: -43px
+.home-short-info_describe_steps
+	margin-top: 60px
+.home-short-info_describe_steps_container
+.home-short-info_describe_steps_container_position
+	display: inline-block
+	max-width: 49.5%
+	margin-bottom: 40px
+.home-short-info_describe_steps_container_position_img
+	display: inline-block
+	height: auto
+	min-width: 57px
+	vertical-align: top
+.home-short-info_describe_steps_container_position_content
+	display: inline-block
+	height: auto
+	max-width: 75%
+	vertical-align: top
+	padding-right: 25px
+	.__title
+		font-size: 17px
+		font-family: $pt-bold
+		color: $deep-sky-blue
+		margin-top: 15px
+		margin-bottom: 15px
+	.__content
+		font-size: 12px
+		font-family: $pt-bold
+		line-height: 1.5
+		padding-bottom: 20px
+		max-height: 55px
+		overflow: hidden
+		color: $gunmetal
+		transition: 0.6s ease all
+		background-color: $white
+		&.show
+			height: auto
+			max-height: 500px
+	.__link
+		color: $dodger-blue
+		font-size: 12px
+		font-family: $pt-bold
+		outline: 0
+		border: none
+		background-color: transparent
+.home-short-info_img
+	text-align: right
+	.__girl-img
+		display: inline-block
+		padding-top: 370px
+.home-short-info_background-img
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 99
+.home-articles
+	margin-top: 50px
+	margin-bottom: 40px
+.home-articles_position_title
+	margin-bottom: 40px
+	.__title
+		margin: 0
+		padding: 0
+		color: $deep-sky-blue
+		font-family: $pt-bold
+		line-height: 1
+		font-size: 28px
+.home-articles_position_list
+	margin-bottom: 40px
+	.__list
+		padding: 0
+		margin: 0
+		list-style-type: none
+		li
+			a
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				flex-wrap: nowrap
+				align-items: center
+				.__container-img
+					min-width: 66px
+					max-width: 66px
+					margin-right: 25px
+					img
+						display: block
+						max-width: 100%
+						height: auto
+			.__container-content
+				.__title
+					font-size: 14px
+					color: $cerise
+					font-family: $pt-bold
+				.__content
+					color: $gunmetal
+					font-size: 12px
+.home-reasons
+	margin-top: 20px
+	background-image: url(../img/cloud-stroke.svg)
+	background-repeat: no-repeat
+	background-position: bottom
+	padding-bottom: 200px
+	margin-bottom: 50px
+.__visible-animate
+	opacity: 1
+.home-reasons_title
+	>.__title
+		font-size: 40px
+		line-height: 1.6
+		font-family: $pt-bold
+		text-align: center
+		color: $dark-sea-green
+		max-width: 72%
+		margin: 0 auto
+	&.visible
+		>.__title
+			opacity: 1
+.home-reasons_reason-container
+	>.__title
+		font-size: 20px
+		color: $gunmetal
+		height: 24px
+		text-align: center
+		margin: 20px auto 30px
+.home-reasons_reason_position
+	position: relative
+	padding-left: 40px
+	padding-top: 50px
+	margin-bottom: 50px
+	>.__number
+		color: $sky
+		position: absolute
+		top: 50px
+		left: -10px
+		font-size: 150px
+		opacity: 0.25
+	>.__title
+		font-size: 20px
+		font-family: $pt-bold
+		color: $gunmetal
+		margin-bottom: 15px
+	>.__content
+		font-size: 16px
+		color: $gunmetal
+		line-height: 1.38
+.home-reasons_reason_register
+	text-align: center
+	margin-top: 20px
+.home-reasons_reason_register_btn
+	outline: 0
+	border-radius: 8px
+	box-shadow: 4px 5px 15px 0 rgba(0, 0, 0, 0.5)
+	background-color: $deep-rose
+	border: solid 2px $white
+	color: $white
+	font-size: 16px
+	padding: 10px 35px
+	text-transform: uppercase
+	transition: 0.3s ease all
+.home-services
+	padding-bottom: 30px
+	position: relative
+	border-bottom: 2px solid $deep-sky-blue
+	margin-bottom: 150px
+	background-image: url(../img/city-2.svg)
+	background-position: bottom
+	background-repeat: no-repeat
+.home-services_title
+	margin-bottom: 80px
+	.__title
+		margin: 0
+		font-size: 40px
+		font-family: $pt-bold
+		color: $dark-sea-green
+		line-height: 1.3
+		text-align: center
+.home-services_container
+	margin-bottom: 00px
+.home-services_position
+	border: 2px solid $deep-sky-blue
+	height: 138px
+	border-radius: 8px
+	text-align: center
+	position: relative
+	margin-bottom: 80px
+	background-color: $white
+	>.__title
+		position: absolute
+		top: -30px
+		left: 50%
+		width: 58%
+		transform: translateX(-50%)
+		color: $deep-sky-blue
+		font-size: 22px
+		font-family: $pt-bold
+		line-height: 1.27
+		padding: 5px 15px
+		background-color: $white
+		text-transform: uppercase
+	>.__content
+		color: $charcoal-grey
+		font-size: 18px
+		max-width: 80%
+		margin: 60px auto 0
+		line-height: 21px
+.home-services_calculate-button
+	text-align: center
+.home-services_calculate-button_btn
+	border-radius: 8px
+	box-shadow: 4px 5px 15px 0 rgba(0, 0, 0, 0.5)
+	background-color: $deep-rose
+	border: solid 2px $white
+	font-size: 16px
+	color: $white
+	text-transform: uppercase
+	transition: 0.3s ease all
+	padding: 10px 35px
+	&:focus
+		outline: 0
+.home-reviews
+	margin-bottom: 100px
+.home-reviews_position
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: flex-start
+	justify-content: space-between
+	flex-wrap: nowrap
+	padding: 31px 47px 27px 17px
+	background-color: $white
+	box-shadow: 10px 14px 0 0 #d5d7de
+	border-radius: 8px
+	.__like
+		padding-top: 15px
+		margin-right: 20px
+	.__content
+		.__title
+			margin-top: 0
+			margin-bottom: 20px
+			color: $gunmetal
+			font-size: 16px
+			font-family: $pt-bold
+		.__describe
+			line-height: 1.58
+			color: #646773
+			font-size: 12px
+			margin-top: 0
+			margin-bottom: 16px
+		.__info
+			.__date
+				display: block
+				font-size: 9px
+				color: #a1a4b4
+				line-height: 1.78
+			.__package-number
+				display: block
+				font-size: 9px
+				color: #a1a4b4
+				line-height: 1.78
+				margin-bottom: 8px
+			.__delivery
+				color: $cerise
+				display: block
+				font-size: 9px
+				line-height: 1.78
+.home-payments-method
+	margin-bottom: 130px
+.home-payments-method_title
+	margin-bottom: 80px
+	>.__title
+		margin: 0
+		max-width: 80%
+		margin: 0 auto
+		text-align: center
+		line-height: 1.3
+		color: $dark-sea-green
+		font-size: 40px
+		font-family: $pt-bold
+.home-payments-method_position
+	padding: 30px 25px 0
+	height: 245.1px
+	border-radius: 5px
+	background-color: $white
+	border: solid 2px $deep-sky-blue
+.home-payments-method_position_img
+	margin-bottom: 40px
+	text-align: center
+	height: 40px
+	img
+		display: inline-block
+		&.__mc
+			float: right
+			margin-top: -5px
+		&.__visa
+			float: left
+.home-service-info
+	height: 290px
+	position: relative
+	padding-top: 68px
+	background-image: url(../img/city-3.svg)
+	
+.home-service-info_position
+	margin: 0 30px 
+	>.__title
+		margin-bottom: 9px
+		line-height: 1.39
+		color: $deep-sky-blue
+		font-size: 23px
+	>.__describe
+		color: $black
+		font-size: 16px
+		line-height: 1.69
+.home-about-us
+	padding-top: 174px
+.home-about-us_content
+	margin-top: 92px
+	>.__title
+		font-size: 53px
+		color: $dark-sea-green
+		margin-bottom: 39px
+		margin-top: 0
+	>.__content
+		color: $black
+		line-height: 1.44
+		font-size: 16px
+		margin-bottom: 20px
+		max-width: 92%
+.home-about-us_feedback-form
+	border-radius: 8px
+	background-color: $white
+	border: solid 2px $deep-sky-blue
+	margin-left: 60px
+	padding: 76px 48px 68px
+	form
+		p
+			margin-bottom: 39px
+			&:last-child
+				margin-bottom: 0
+			label
+				display: block
+				font-size: 12px
+				color: $deep-sky-blue
+				line-height: 2.08
+				text-transform: uppercase
+			input
+				display: block
+				width: 100%
+				border: none
+				font-size: 16px
+				line-height: 1.56
+				color: $greyish-brown
+				border-bottom: solid 2px $deep-sky-blue
+				&:focus
+					outline: 0
+			textarea
+				resize: none
+				width: 100%
+				border: none
+				font-size: 16px
+				line-height: 1.56
+				color: $greyish-brown
+				height: 100px
+				border-bottom: solid 2px $deep-sky-blue
+				&:focus
+					outline: 0
+			button
+				color: $white
+				text-transform: uppercase
+				font-size: 16px
+				line-height: 1.56
+				padding: 10px 15px
+				outline: 0
+				border-radius: 4px
+				background-color: $deep-sky-blue
+				border: none
+.home-start-shopping
+	margin-top: 100px
+	margin-bottom: 70px
+.home-start-shopping_title
+	text-align: center
+	>.__title
+		font-size: 52px
+		font-family: $pt-bold
+		letter-spacing: -0.4px
+		color: $gunmetal
+		margin-bottom: 50px
+	>.__btn
+		box-shadow: 4px 5px 15px 0 rgba(0, 0, 0, 0.5)
+		border-radius: 9px
+		border: 2px solid $white
+		background-color: $deep-rose
+		color: $white
+		text-transform: uppercase
+		font-size: 16px
+		padding: 10px 35px
+		transition: 0.3s ease all
+		&:focus
+			outline: 0
+.home-start-shopping_calculate
+	max-width: 600px
+	margin: 100px auto
+	text-align: center
+	.__title
+		font-size: 32px
+		font-family: $pt-bold
+		color: $gunmetal
+		margin-top: 0
+		margin-bottom: 15px
+	.__btn
+		font-family: $pt-reg
+		font-size: 32px
+		color: $gunmetal
+		a
+			font-family: $pt-bold
+			color: $deep-sky-blue
+			transition: 0.3s ease all
+footer
+	margin-top: 50px
+.footer_content_position
+	>.__title
+		font-size: 16px
+		color: $deep-sky-blue
+		font-family: $pt-bold
+		margin-bottom: 20px
+		margin-top: 0
+	>.__list-info
+		list-style-type: none
+		margin: 0
+		padding: 0
+		li
+			font-size: 14px
+			a
+				color: $gunmetal
+				padding: 10px 0
+				display: inline-block
+				&:focus
+					outline: 0
+					text-decoration: none
+			&:first-child
+				a
+					padding-top: 0
+			&:last-child
+				a
+					padding-bottom: 0
+	.footer_content_position_imgs
+		max-width: 220px
+		a	
+			display: inline-block
+			height: 47px
+			width: 80px
+			border: solid 1px $pale-blue
+			background-color: $ice-blue
+			border-radius: 5px
+			text-align: center
+			line-height: 47px
+			margin-right: 24px
+			margin-bottom: 16px
+			img
+				max-width: 100%
+				margin: 0 auto
+				height: auto
+				// line-height: 47px
+				vertical-align: middle
+			&:hover
+				text-decoration: none
+	>.__list-soc
+		list-style-type: none
+		margin: 0
+		padding: 0
+		li
+			display: inline-block
+			position: relative
+			>.__tooltip
+				position: absolute
+				top: -30px
+				left: -25px
+				opacity: 0
+				transition: 0.3s ease opacity
+				color: $white
+				padding: 4px 8px
+				background-color: $black
+				border-radius: 4px
+				&:after
+					content: ''
+					position: absolute
+					bottom: -7px
+					left: 50%
+					transform: translateX(-50%)
+					border-style: solid
+					border-width: 7px 7px 0 7px
+					border-color: #000000 transparent transparent transparent
+			&:hover
+				>.__tooltip
+					opacity: 1
+	>.__tel-title
+		color: $gunmetal
+		font-size: 14px
+		font-family: $pt-bold
+		margin-bottom: 18px
+	>.__tel
+		font-size: 14px
+		color: $gunmetal
+		margin-bottom: 18px
+		a
+			color: $gunmetal
+			&:hover
+				text-decoration: none
+	>.__address-title
+		font-size: 14px
+		color: $gunmetal
+		margin-bottom: 18px
+		font-family: $pt-bold	
+	.__address
+		margin-bottom: 18px
+		font-size: 14px
+		color: $gunmetal
+.footer-foot
+	padding: 10px 0
+	vertical-align: middle
+	padding-top: 170px
+	background-image: url(../img/city-4.svg)
+	background-position: top
+	background-repeat: no-repeat	
+.footer-foot_coptyright
+	display: inline-block
+	vertical-align: middle
+	margin-top: 20px
+	p
+		font-size: 10px
+		color: $gunmetal
+		margin-bottom: 0
+.footer-foot_logo
+	vertical-align: middle
+	margin-top: 20px
+	display: inline-block
+	text-align: center
+	a
+		display: block
+		text-align: center
+		img
+			margin: 0 auto
+			max-height: 24px
+.modals-container
+	visibility: 0
+.modal_container
+	max-width: 80vw
+	margin: 5vw auto 3vw
+	max-height: 80vh
+	overflow-y: auto
+	overflow-x: hidden
+	width: auto
+	padding: 35px 40px
+	background-color: $white
+	color: $black
+	border: 2px solid $deep-sky-blue
+	position: relative
+	.__title
+		font-size: 26px
+		color: $black
+		text-transform: uppercase
+		margin: 20px autp 30px
+		text-align: center
+		font-family: $pt-bold
+	.__content
+	.__modal-close
+		position: fixed
+		top: 4.2vw
+		right: 10vw
+		outline: 0
+		border: 1px solid $dark-sea-green
+		background-color: $deep-sky-blue
+		color: $white
+		font-size: 50px
+		padding: 12px 7px
+		border-radius: 50px
+.header_info_menu-mobile
+	display: none
+// CASHBACK PAGE STARTS
+.cashback-title
+	background-image: linear-gradient(to bottom, #e5f3f7, rgba(227, 241, 245, 0))
+.cashback-title_container
+	background-image: url(../img/town.svg)
+	background-repeat: repeat-x
+	padding-top: 113px
+	padding-bottom: 70px
+	text-align: center
+	max-width: 1200px
+	margin: 0 auto
+	.__title
+		margin-bottom: 19px
+		font-family: $pt-bold
+		font-size: 52px
+		letter-spacing: -0.4px
+		line-height: 1.38
+		color: $dark-sea-green
+	.__describe
+		color: $charcoal-grey
+		line-height: 1.38
+		letter-spacing: 0.2px
+		font-size: 26px
+		font-family: $pt-bold
+		max-width: 1100px
+		margin: 0 auto
+.cashback-main_left-text
+	background-image: url(../img/girl-02.svg)
+	background-position: top right
+	background-repeat: no-repeat
+	background-size: 405px 545px
+	overflow-y: visible
+	.__content
+		max-width: 700px
+		font-size: 16px
+		letter-spacing: -0.1px
+		color: $gunmetal
+		a
+			color: $deep-sky-blue
+		img
+			margin-top: 30px
+			margin-left: 40px
+	.__title
+		margin-top: 50px
+		font-size: 28px
+		color: $deep-sky-blue
+		font-family: $pt-bold
+.cashback-main_how-buy_list
+	list-style-type: decimal
+	margin-top: 40px
+	li
+		color: rgba(0, 128, 255, 0.32)
+		font-size: 21px
+		letter-spacing: -0.2px
+		font-family: $pt-bold
+		margin-bottom: 31px
+		// opacity: 0.32
+		.__title
+			letter-spacing: -0.2px
+			color: $gunmetal
+			font-size: 21px
+			font-family: $pt-bold
+			padding-left: 15px
+			margin-top: 0
+			margin-bottom: 17px
+			opacity: 1
+		.__content
+			padding-left: 15px
+			opacity: 1
+			font-size: 16px
+			color: $gunmetal
+			letter-spacing: -0.1px
+			font-family: $pt-reg
+			max-width: 760px
+		.__list
+			list-style-type: decimal
+			margin-top: 15px
+			li
+				color: $gunmetal
+				font-size: 16px
+				letter-spacing: -0.1px
+				font-family: $pt-reg
+				margin-bottom: 15px
+// CASHBACK PAGE ENDS
+// PRICES PAGE STARTS
+.prices-title
+	background-image: linear-gradient(to bottom, #e5f3f7, rgba(227, 241, 245, 0))
+.prices-title_container
+	background-image: url(../img/town.svg)
+	background-repeat: repeat-x
+	padding-top: 113px
+	padding-bottom: 70px
+	text-align: center
+	margin: 0 auto
+	overflow-x: visible
+	.__title
+		margin-bottom: 19px
+		font-family: $pt-bold
+		font-size: 52px
+		letter-spacing: -0.4px
+		line-height: 1.38
+		color: $dark-sea-green
+	.__describe
+		color: $charcoal-grey
+		line-height: 1.38
+		letter-spacing: 0.2px
+		font-size: 26px
+		font-family: $pt-bold
+		max-width: 800px
+		margin: 0 auto
+.prices-main
+	background-image: url(../img/girl-04.svg)
+	background-position: top center
+	background-repeat: no-repeat
+	background-size: 340px 770px
+.prices-main_container
+	padding-top: 130px
+	max-width: 1200px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	margin: 0 auto 150px
+	flex-wrap: wrap
+.prices-main_positions-left-right
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-wrap: wrap
+	width: 100%
+	margin: 25px 0
+	align-items: center
+.prices-main_positions-full
+	width: 100%
+	justify-content: space-between
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	margin: 25px 0
+	.prices-main_positions-left-right_position
+		max-width: 30%
+.prices-main_positions-left-right_position
+	border: 2px solid $deep-sky-blue
+	border-radius: 8px
+	min-width: 390px
+	position: relative
+	padding-top: 22px
+	position: relative
+	text-align: center
+	&.left
+		margin-right: auto
+	&.right
+		margin-left: auto
+	.__title
+		position: absolute
+		top: -26px
+		left: 50%
+		max-width: 100%
+		background-color: $white
+		text-transform: uppercase
+		transform: translateX(-50%)
+		font-size: 22px
+		font-family: 'Comfortaa'
+		font-weight: 700
+		line-height: 1.27
+		color: $deep-sky-blue
+		min-width: 60%
+		padding-right: 10px
+		padding-left: 10px
+		white-space: nowrap
+	.__title-describe
+		font-family: 'Comfortaa'
+		font-weight: 700
+		color: $cerise
+		line-height: 2
+		margin-top: 25px
+		margin-bottom: 21px
+		font-size: 18px
+		text-transform: uppercase
+	.__content
+		max-width: 220px
+		color: $black
+		font-size: 16px
+		font-family: $pt-reg
+		text-align: center
+		margin: 0 auto 27px
+.prices-main_btn-link
+	text-align: center
+	display: block
+	margin: 100px auto 0
+	.__link
+		display: inline-block
+		border-radius: 8px
+		box-shadow: 4px 5px 15px 0 rgba(0, 0, 0, 0.5)
+		background-color: $deep-rose
+		border: solid 2px $white
+		color: $white
+		text-align: center
+		transition: 0.3s ease all
+		text-transform: uppercase
+		padding: 19px 80px 16px
+.prices-bonuse
+	margin-bottom: 150px
+.prices-bonuse_container
+	position: relative
+	border: 2px solid $deep-sky-blue
+	border-radius: 8px
+	padding: 65px 30px 30px
+.prices-bonuse_container_title
+	position: absolute
+	top: -52px
+	left: 50%
+	transform: translateX(-50%)
+	.__title
+		color: $dark-sea-green
+		font-size: 40px
+		line-height: 1.3
+		font-family: $pt-bold
+		text-align: center
+		padding-right: 20px
+		padding-left: 20px
+		background-color: $white
+.prices-bonuse_position
+	padding: 20px 24px
+	background-color: #e8eff0
+	border-radius: 8px
+	margin: 0 20px
+	min-height: 553px
+	.prices-bonuse_position_top
+		.__title
+			text-transform: uppercase
+			font-size: 28px
+			font-family: $pt-bold
+			text-align: center
+			color: $deep-sky-blue
+			margin-top: 0
+			margin-bottom: 20px
+		.__describe
+			text-align: center
+			color: $cerise
+			font-size: 16px
+			font-family: $pt-bold
+	.prices-bonuse_position-square
+		padding: 22px 29px
+		border: 1px solid $deep-sky-blue
+		border-radius: 8px
+		margin-bottom: 18px
+		.__title
+			font-size: 17px
+			font-family: $pt-bold
+			color: $deep-sky-blue
+			margin-top: 0
+			margin-bottom: 10px
+		.__list
+			font-family: $pt-bold
+			padding-left: 15px
+			li
+				font-family: $pt-reg
+				font-size: 16px
+				color: $charcoal-grey
+				margin-bottom: 8px
+				span
+					font-family: $pt-bold
+		.__content
+			font-family: $pt-reg
+			font-size: 16px
+			color: $charcoal-grey
+			margin-top: 8px
+			margin-bottom: 8px
+			span
+				font-family: $pt-bold
+	.prices-bonuse_position_bottom
+		.__describe
+			text-align: center
+			color: $cerise
+			font-size: 16px
+			font-family: $pt-bold
+			max-width: 280px
+			margin: 0 auto
+.prices-bonuse_position_info
+	margin-top: 36px
+	text-align: center
+	.__content
+		font-size: 12px
+		color: $charcoal-grey
+		font-family: $pt-reg
+// PRICES PAGE ENDS
+// PAYMENTS PAGE STARTS
+.payments-title
+	background-image: linear-gradient(to bottom, #e5f3f7, rgba(227, 241, 245, 0))
+.payments-title_container
+	background-image: url(../img/town.svg)
+	background-repeat: repeat-x
+	padding-top: 113px
+	padding-bottom: 70px
+	text-align: center
+	margin: 0 auto
+	overflow-x: visible
+	.__title
+		margin-bottom: 19px
+		font-family: $pt-bold
+		font-size: 52px
+		letter-spacing: -0.4px
+		line-height: 1.38
+		color: $dark-sea-green
+	.__describe
+		color: $charcoal-grey
+		line-height: 1.38
+		letter-spacing: 0.2px
+		font-size: 26px
+		font-family: $pt-bold
+		max-width: 1000px
+		margin: 0 auto
+// PAYMENTS PAGE ENDS
+// WHY-BUY PAGE STARTS
+.why-buy-title
+	background-image: linear-gradient(to bottom, #e5f3f7, rgba(227, 241, 245, 0))
+.why-buy-title_container
+	background-image: url(../img/town.svg)
+	background-repeat: repeat-x
+	padding-top: 113px
+	padding-bottom: 70px
+	text-align: center
+	margin: 0 auto
+	overflow-x: visible
+	.__title
+		margin-bottom: 19px
+		font-family: $pt-bold
+		font-size: 52px
+		letter-spacing: -0.4px
+		line-height: 1.38
+		color: $dark-sea-green
+	.__describe
+		color: $charcoal-grey
+		line-height: 1.38
+		letter-spacing: 0.2px
+		font-size: 26px
+		font-family: $pt-bold
+		max-width: 1050px
+		margin: 0 auto
+.why-buy_content
+	margin-top: 100px
+	margin-bottom: 150px
+.why-buy_content_container
+	max-width: 1100px
+	margin: 0 auto
+.why-buy_content_position
+	padding: 26px 11px 13px 41px
+	background-color: #eef3f4
+	box-shadow: 10px 14px 0 0 #d5d7de
+	border-radius: 8px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
+	margin: 0 50px 70px
+.why-buy_content_position_content
+	margin-right: 20px
+	.__title
+		font-size: 31px
+		font-family: $pt-bold
+		color: $cerise
+		margin-top: 0
+		margin-bottom: 14px
+	.__describe
+		line-height: 1.28
+		color: $gunmetal
+		font-size: 14px
+		max-width: 750px
+.why-buy_content_position_img
+	margin-left: auto
+	max-width: 184px
+	img
+		margin-top: -40px
+	.__info
+		font-size: 14px
+		margin-top: 16px
+		color: $gunmetal
+		font-family: $pt-bold
+		padding-left: 10px
+// WHY-BUY PAGE ENDS
+// BONUSES PAGE STARTS
+.bonuses-page-title
+	background-image: linear-gradient(to bottom, #e5f3f7, rgba(227, 241, 245, 0))
+.bonuses-page-title_container
+	background-image: url(../img/town.svg)
+	background-repeat: repeat-x
+	padding-top: 113px
+	padding-bottom: 70px
+	text-align: center
+	margin: 0 auto
+	overflow-x: visible
+	.__title
+		margin-bottom: 19px
+		font-family: $pt-bold
+		font-size: 52px
+		letter-spacing: -0.4px
+		line-height: 1.38
+		color: $dark-sea-green
+	.__describe
+		color: $charcoal-grey
+		line-height: 1.38
+		letter-spacing: 0.2px
+		font-size: 26px
+		font-family: $pt-bold
+		max-width: 1000px
+		margin: 0 auto
+.bonuses-page_content
+	position: relative
+	.bonuses-page_bgi
+		position: absolute
+		top: -90px
+		left: 50%
+		transform: translateX(-50%)
+		img
+			max-width: 306px
+			display: block
+			height: auto
+.bonuses-page_content_container
+	max-width: 1200px
+	padding-top: 70px
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	margin: 0 auto
+	justify-content: space-between
+.bonuses-page_content_position
+	flex: 0 0 40%
+	background-color: #f0f8fa
+	border-radius: 8px
+	padding: 20px 25px
+.bonuses-page_content_position_top
+	text-align: center
+	margin-bottom: 8px
+	.__title
+		margin-top: 0
+		margin-bottom: 20px
+		color: $deep-sky-blue
+		font-size: 27px
+		font-family: $pt-bold
+	.__content
+		font-family: $pt-bold
+		font-size: 16px
+		color: $cerise
+		margin-top: 0
+		margin-bottom: 0
+.bonuses-page_content_position_list
+	border-radius: 8px
+	border: 2px solid $deep-sky-blue
+	margin-bottom: 18px
+	padding: 22px 19px
+	margin-bottom: 18px
+	.__title
+		font-size: 17px
+		font-family: $pt-bold
+		color: $deep-sky-blue
+		margin-top: 0
+		margin-bottom: 10px
+	.__list
+		margin-bottom: 0
+		padding-left: 20px
+		font-family: $pt-bold
+		li
+			font-family: $pt-reg
+			font-size: 16px
+			color: $charcoal-grey
+			span
+				font-family: $pt-bold
+	.__content
+		span
+			font-family: $pt-bold
+.bonuses-page_content_position_bottom
+	text-align: center
+	.__content
+		max-width: 280px
+		margin: 0 auto
+		font-size: 16px
+		font-family: $pt-bold
+		color: $cerise
+.bonuses-page_content_info
+	margin-top: 70px
+	margin-bottom: 50px
+	text-align: center
+	.__content
+		font-size: 12px
+		color: $charcoal-grey
+		font-family: $pt-reg
+// BONUSES PAGE ENDS
+// DELIVERY PAGE STARTS
+.delivery-page-title
+	background-image: linear-gradient(to bottom, #e5f3f7, rgba(227, 241, 245, 0))
+.delivery-page-title_container
+	background-image: url(../img/town.svg)
+	background-repeat: repeat-x
+	padding-top: 113px
+	padding-bottom: 70px
+	text-align: center
+	margin: 0 auto
+	overflow-x: visible
+	.__title
+		margin-bottom: 19px
+		font-family: $pt-bold
+		font-size: 52px
+		letter-spacing: -0.4px
+		line-height: 1.38
+		color: $dark-sea-green
+	.__describe
+		color: $charcoal-grey
+		line-height: 1.38
+		letter-spacing: 0.2px
+		font-size: 26px
+		font-family: $pt-bold
+		max-width: 1200px
+		margin: 0 auto
+.delivery-page_content_container
+	max-width: 1200px
+	margin: 0 auto
+.delivery-page_content_list
+	text-align: center
+	.__list
+		margin: 0
+		padding: 0
+		text-align: center
+		list-style-type: none
+		li
+			display: inline-block
+			padding: 25px 45px
+			background-color: transparent
+			transition: 0.4s ease all
+			border-radius: 8px 8px 0 0
+			font-size: 18px
+			font-family: $pt-bold
+			color: $deep-sky-blue
+			letter-spacing: -0.2px
+			cursor: pointer
+			&.active
+				background-color: #e3f1f5
+.delivery-page_content_tabs
+	padding: 30px
+	background-color: #e3f1f5
+	border-radius: 8px
+	position: relative
+	overflow-y: hidden
+	margin-bottom: 100px
+.delivery-page_content_tabs_position
+	transition: 0.4s ease all
+	opacity: 0
+	transform: translate3d(0, 100vh, 0)
+	position: absolute
+	bottom: 0
+	left: 0
+	right: 0
+	&.active
+		opacity: 1
+		transform: none
+		position: relative
+.delivery-page_content_tabs_position_info
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	margin-bottom: 30px
+	.__content
+		color: $gunmetal
+		letter-spacing: -0.1px
+		font-size: 14px
+	.__deadlines
+		font-size: 14px
+		letter-spacing: -0.1px
+		color: $gunmetal
+		font-family: $pt-bold
+.delivery-page_content_tabs_position_row
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	align-items: stretch
+	margin-top: 30px
+.delivery-page_content_tabs_position_row_col
+	background-color: $white
+	border-radius: 8px
+	padding: 20px
+	text-align: center
+	.__title
+		color: $deep-sky-blue
+		font-size: 21px
+		letter-spacing: -0.2px
+		margin-top: 0px
+		margin-bottom: 15px
+	.__content
+		letter-spacing: -0.1px
+		color: $gunmetal
+		font-size: 14px
+	.__list
+		font-size: 14px
+		letter-spacing: -0.1px
+		color: $gunmetal
+		list-style-type: none
+		margin: 0
+		padding: 0
+	&.logo
+		max-width: 390px
+		text-align: left
+		background-color: transparent
+		.__content
+			color: $gunmetal
+			font-family: $pt-bold
+			margin-top: 28px
+			margin-bottom: 0
+	&.sm
+		min-width: 159px
+		max-width: 159px
+	&.md
+		min-width: 354px
+		max-width: 354px
+	&.lg
+		flex: 0 0 48.5%
+.delivery-page_content_tabs_position_p-s
+	margin-top: 20px
+	margin-bottom: 0
+	.__content
+		font-size: 12px
+		color: $charcoal-grey
+// DELIVERY PAGE ENDS
+// HOW BUY PAGE STARTS
+.how-buy-page-title
+	background-image: linear-gradient(to bottom, #e5f3f7, rgba(227, 241, 245, 0))
+.how-buy-page-title_container
+	background-image: url(../img/town.svg)
+	background-repeat: repeat-x
+	padding-top: 113px
+	padding-bottom: 70px
+	text-align: center
+	margin: 0 auto
+	overflow-x: visible
+	.__title
+		margin-bottom: 19px
+		font-family: $pt-bold
+		font-size: 52px
+		letter-spacing: -0.4px
+		line-height: 1.38
+		color: $dark-sea-green
+	.__describe
+		color: $charcoal-grey
+		line-height: 1.38
+		letter-spacing: 0.2px
+		font-size: 26px
+		font-family: $pt-bold
+		max-width: 1200px
+		margin: 0 auto
+.how-buy-page_content
+	position: relative
+	margin-bottom: 100px
+	padding-top: 50px
+.how-buy-page_content_bgi
+	position: absolute
+	top: -60px
+	left: 50%
+	max-width: 400px
+	transform: translateX(-50%)
+.how-buy-page_content_container
+	max-width: 1200px
+	margin: 0 auto
+.how-buy-page_content_row
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+.how-buy-page_content_position
+	padding-left: 90px
+	position: relative
+	padding-right: 50px
+	flex: 0 0 50%
+	.__number
+		position: absolute
+		left: 0
+		top: 0
+		font-size: 30px
+		color: $deep-sky-blue
+		padding: 25px
+		border-radius: 150px
+		border: 1px solid $deep-sky-blue
+	.__title
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		span.__text
+			font-size: 20px
+			color: $deep-sky-blue
+			white-space: nowrap
+			z-index: 1
+			margin-right: 40px
+		span.__line
+			height: 2px
+			width: 100%
+			background-color: $deep-sky-blue
+			margin-right: 5px
+	.__content
+		font-size: 14px
+		color: $gunmetal
+		line-height: 1.29
+		margin-top: 0
+		margin-bottom: 16px
+		&.__content-sm
+			max-width: 250px
+		&.__content-md
+			max-width: 400px
+	&.first
+		flex: 0 0 60%
+	&.second
+		flex: 0 0 38%
+		.__title
+			span.__line
+				position: absolute
+				left: 34px
+				top: 80px
+				z-index: -2
+				height: 280px
+				width: 2px
+	&.third
+		flex: 0 0 60%
+	&.fourth
+		flex: 0 0 38%
+		.__title
+			span.__line
+				display: none
+// HOW BUY PAGE ENDS
+// MARKET PAGE STARTS
+.market-page-title
+	background-image: linear-gradient(to bottom, #e5f3f7, rgba(227, 241, 245, 0))
+.market-page-title_container
+	background-image: url(../img/town.svg)
+	background-repeat: repeat-x
+	padding-top: 113px
+	padding-bottom: 70px
+	text-align: center
+	margin: 0 auto
+	overflow-x: visible
+	.__title
+		margin-bottom: 19px
+		font-family: $pt-bold
+		font-size: 52px
+		letter-spacing: -0.4px
+		line-height: 1.38
+		color: $dark-sea-green
+	.__describe
+		color: $charcoal-grey
+		line-height: 1.38
+		letter-spacing: 0.2px
+		font-size: 26px
+		font-family: $pt-bold
+		max-width: 1200px
+		margin: 0 auto
+.market-page_content
+	position: relative
+	z-index: 2
+.market-page_content_position
+	padding: 16px 8px
+	background-color: #eef3f4
+	transition: 0.5s ease max-height
+	margin-bottom: 30px
+	position: relative
+.market-page_content_tabs_position
+	transition: 0.4s ease all
+	transform: translate3d(-150vw, 0, 0)
+	opacity: 0
+	position: absolute
+	top: 0
+	left: 0
+	z-index: -1
+	&.active
+		transform: translate3d(0,0,0)
+		z-index: 1
+		position: static
+		opacity: 1
+.market-page_content_position_short
+	text-align: center
+	.__title
+		margin-top: 0
+		margin-bottom: 12px
+		font-family: $pt-bold
+		letter-spacing: -0.2px
+		color: $charcoal-grey
+		font-size: 19px
+	.__content
+		margin-top: 8px
+		margin-bottom: 0
+		color: $charcoal-grey
+		letter-spacing: -0.1px
+		font-size: 14px
+.marketpage_content_position_full
+	max-height: 0
+	opacity: 0
+	transition: 0.5s ease max-height
+	position: absolute
+	right: 0
+	left: 0
+	padding: 0
+	background-color: #eef3f4
+	z-index: -1
+	.__content
+		letter-spacing: -0.1px
+		font-size: 12px
+		color: $gunmetal
+		margin-top: 16px
+		margin-bottom: 8px
+		transition: 0.4s ease all 0.2s
+		opacity: 0
+	.__site
+		font-family: $pt-bold
+		font-size: 12px
+		color: $gunmetal
+		transition: 0.4s ease all 0.2s
+		opacity: 0
+		.__link
+			color: $deep-sky-blue
+			font-family: $pt-bold
+			transition: 0.4s ease all
+	.__payments
+		font-size: 12px
+		color: $gunmetal
+		font-family: $pt-reg
+		letter-spacing: -0.1px
+		transition: 0.4s ease all 0.2s
+		opacity: 0
+		span
+			font-family: $pt-bold
+	.__price
+		font-size: 12px 
+		letter-spacing: -0.1px
+		color: $gunmetal
+		font-family: $pt-reg
+		transition: 0.4s ease all 0.2s
+		opacity: 0
+		span
+			font-family: $pt-bold
+	.__info
+		font-size: 12px
+		color: $gunmetal
+		font-family: $pt-reg
+		letter-spacing: -0.1px
+		transition: 0.4s ease all 0.2s
+		opacity: 0
+		span
+			display: block
+			font-family: $pt-bold
+	.__content, .__site, .__payments, .__price, .__info
+		max-height: 0
+		transition: 0.4s ease max-height
+.market-page_content_sidebar
+	max-height: 580px
+	min-height: 580px
+.market-page_content_sidebar_list
+	margin: 0
+	list-style-type: none
+	padding-left: 40px
+	position: relative
+	overflow: hidden
+	overflow-y: auto
+	max-height: 580px
+	min-height: 580px
+	li
+		letter-spacing: 1.31em
+		letter-spacing: -0.1px
+		font-size: 16px
+		padding: 10px 0
+		position: relative
+		transition: 0.4s ease all
+		&:before
+			content: ''
+			position: absolute
+			left: -23px
+			top: 50%
+			transform: translateY(-50%)
+			width: 4px
+			height: 40px
+			background-color: #eef3f4
+			transition: 0.4s ease all
+		&:hover
+			cursor: pointer
+		&.active
+			font-family: $pt-bold
+			color: $cerise
+			&:before
+				width: 10px
+				height: 30px
+				left: -26px
+				background-color: $cerise
+.market-page_pagination
+	padding-top: 100px
+	padding-bottom: 100px
+	z-index: 11
+	position: relative
+.market-page_pagination_container
+	max-width: 1200px
+	text-align: center
+	margin: 0 auto
+	position: relative
+	z-index: 1
+	max-height: 25px
+.market-page_pagination_list
+	margin: 0
+	padding: 0
+	list-style-type: none
+	background-color: #eef3f4
+	position: relative
+	z-index: 10
+	max-height: 27px
+	li
+		display: inline-block
+		transition: 0.4s ease all
+		padding: 9px 12px
+		position: relative
+		z-index: 10
+		top: -2px
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			bottom: 0
+			right: 0
+			left: 0
+			height: 31px
+			width: 31px
+			background-color: transparent
+			z-index: -1
+		a
+			display: block
+			font-family: $pt-bold
+			font-size: 14px
+			color: $deep-sky-blue
+			letter-spacing: -0.1px
+			transition: 0.4s ease all
+		&.active
+			&:before
+				background-color: $cerise
+			a
+				color: $white
+// MARKET PAGE ENDS
+// FAQ PAGE STARTS
+.faq-page-main
+	margin-top: 50px
+	margin-bottom: 100px
+.faq-page-main_sidebar
+	padding-top: 30px
+.faq-page-main_sidebar_list
+	list-style-type: none
+	margin: 0
+	padding: 0
+	li
+		padding: 7px 0
+		a
+			display: block
+			line-height: 1.5
+			letter-spacing: -0.1px
+			font-size: 14px
+			font-family: $pt-bold
+			color: $charcoal-grey
+			transition: 0.4s ease all
+			&:visited
+				color: $gunmetal
+		&.active
+			a
+				color: $cerise
+.faq-page-main_tabs_positions_tabs
+	position: relative
+.faq-page-main_tabs_position_content
+	padding-left: 30px
+	padding-right: 30px
+	transition: 0.4s ease all
+	transform: translate3d(0,100vw,0)
+	position: absolute
+	top: 0
+	left: 0
+	opacity: 0
+	&.active
+		transform: none
+		opacity: 1
+		position: static
+.faq-page-main_tabs_position_content_title
+	margin-bottom: 38px
+	.__title
+		line-height: 1.38
+		letter-spacing: -0.1px
+		font-size: 52px
+		color: $gunmetal
+		font-family: $pt-bold
+		margin-top: 0
+		margin-bottom: 13px
+	.__content
+		font-size: 14px
+		font-family: $pt-reg
+		letter-spacing: -0.1px
+.faq-page-main_tabs_position_content_main
+	.__title-main
+		letter-spacing: -0.2px
+		margin-top: 0
+		margin-bottom: 13px
+		font-size: 26px
+		color: $cerise
+		text-transform: uppercase
+		font-family: $pt-bold
+	.__title-sm
+		margin-top: 0
+		margin-bottom: 10px
+		color: $deep-sky-blue
+		font-size: 16px
+		font-family: $pt-bold
+		letter-spacing: -0.1px
+	.__content
+		margin-top: 0
+		margin-bottom: 15px
+		font-size: 14px
+		letter-spacing: -0.1px
+		color: $gunmetal
+	.__list
+		margin: 0
+		padding-left: 20px
+		li
+			font-size: 14px
+			color: $gunmetal
+			letter-spacing: -0.1px
+			font-family: $pt-reg
+			margin-bottom: 15px
+.faq-page-main_tabs_position_tabs
+	.__title
+		text-transform: uppercase
+		color: $cerise
+		font-size: 16px
+		font-family: $pt-bold
+		margin-bottom: 14px
+	.__list
+		margin: 0
+		list-style-type: none
+		padding-left: 25px
+		li
+			color: #646773
+			line-height: 1.43
+			letter-spacing: -0.1px
+			font-size: 14px
+			padding-bottom: 7px
+			padding-top: 7px
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: -20px
+				bottom: 0
+				width: 4px
+				background-color: #eef3f4
+				transition: 0.4s ease all
+			&:hover
+				text-decoration: none
+				cursor: pointer
+			&.active
+				color: $cerise
+				&:after
+					content: ''
+					position: absolute
+					width: 10px
+					height: 24px
+					top: 50%
+					left: -23px
+					transform: translateY(-50%)
+					background-color: $cerise
+// FAQ PAGE ENDS
+@import "_animation.sass"
+@import "_hover.sass"
+@import "_media.sass"
