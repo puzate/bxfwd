@@ -23,6 +23,18 @@ jQuery(document).ready(function() {
 			$('body').addClass('o-hidden');
 		});
 	};
+	$('.faq-page-main_sidebar_sm_btn').click(function() {
+		$('.faq-page-main_sidebar').toggleClass('__open');
+		$($(this)).toggleClass('__open')
+	});
+	$('.market-page_content_sidebar .__btn').click(function() {
+		$($(this)).toggleClass('__open');
+		$('.market-page_content_sidebar_list').toggleClass('__open')
+	});
+	$('.home-short-info_menu_container').remove();
+	// $('body').click(function() {
+	// 	$('.faq-page-main_sidebar').removeClass('__open')
+	// });
 	$('.delivery-page_content_list ul.__list').on('click', 'li:not(.active)', function() {
     $(this)
       .addClass('active')

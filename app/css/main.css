@@ -1958,6 +1958,8 @@ footer {
 .market-page_content_sidebar {
   max-height: 580px;
   min-height: 580px; }
+  .market-page_content_sidebar .__btn {
+    display: none; }
 
 .market-page_content_sidebar_list {
   margin: 0;
@@ -2182,6 +2184,9 @@ footer {
         left: -23px;
         transform: translateY(-50%);
         background-color: #d90952; }
+
+.faq-page-main_sidebar_sm_btn {
+  display: none; }
 
 @media screen and (min-width: 1501px) and (max-width: 1920px) {
   .home-short-info_bgi-imgs_cloud svg {
@@ -2485,18 +2490,81 @@ footer {
     max-width: 35px; }
   .header_logo {
     padding-top: 10px; }
-  .bonuses-page-title_container {
+  .bonuses-page-title_container,
+  .delivery-page-title_container,
+  .how-buy-page-title_container,
+  .payments-title_container,
+  .prices-title_container,
+  .market-page-title_container,
+  .why-buy-title_container {
     padding-top: 75px; }
-    .bonuses-page-title_container .__title {
+    .bonuses-page-title_container .__title,
+    .delivery-page-title_container .__title,
+    .how-buy-page-title_container .__title,
+    .payments-title_container .__title,
+    .prices-title_container .__title,
+    .market-page-title_container .__title,
+    .why-buy-title_container .__title {
       font-size: 42px; }
-    .bonuses-page-title_container .__describe {
+    .bonuses-page-title_container .__describe,
+    .delivery-page-title_container .__describe,
+    .how-buy-page-title_container .__describe,
+    .payments-title_container .__describe,
+    .prices-title_container .__describe,
+    .market-page-title_container .__describe,
+    .why-buy-title_container .__describe {
       font-size: 24px; }
   .bonuses-page_content_container {
     padding-top: 30px; }
-  .home-start-shopping_title > .__title {
+  .home-start-shopping_title > .__title,
+  .delivery-page-title_container .__title {
     font-size: 42px; }
   .home-start-shopping_calculate {
-    margin-bottom: 50px; } }
+    margin-bottom: 50px; }
+  .cashback-main_left-text .__content {
+    max-width: 600px; }
+  .delivery-page_content_tabs_position_row_col {
+    margin: 0 5px; }
+    .delivery-page_content_tabs_position_row_col.md {
+      min-width: 290px;
+      max-width: 300px; }
+    .delivery-page_content_tabs_position_row_col.sm {
+      max-width: 150px;
+      min-width: 140px; }
+  .delivery-page_content_list .__list li {
+    padding: 20px 35px; }
+  .delivery-page_content_tabs_position_info .__deadlines {
+    text-align: right; }
+  .delivery-page_content_tabs {
+    margin-right: 10px;
+    margin-left: 10px; }
+  .faq-page-main_sidebar {
+    padding-top: 70px; }
+  .faq-page-main_tabs_position_content_title .__title {
+    font-size: 42px; }
+  .how-buy-page_content_bgi {
+    top: -40px;
+    max-width: 300px; }
+  .how-buy-page_content_position.second .__title span.__line {
+    height: 75%; }
+  .market-page_pagination {
+    padding-bottom: 30px; }
+  .prices-main_positions-left-right_position {
+    min-width: 310px; }
+    .prices-main_positions-left-right_position .__title {
+      font-size: 18px; }
+    .prices-main_positions-left-right_position .__title-describe {
+      margin-top: 10px;
+      margin-bottom: 10px; }
+  .prices-main_container {
+    padding-top: 100px;
+    margin-bottom: 80px; }
+  .prices-bonuse_position {
+    min-height: 665px; }
+  .prices-bonuse {
+    margin-bottom: 80px; }
+  .why-buy_content {
+    margin-top: 50px; } }
 
 @media screen and (max-width: 1270px) and (min-width: 1200px) {
   .home-short-info_describe {
@@ -2577,7 +2645,174 @@ footer {
   .home-articles_position_list .__list li a .__container-img {
     margin-right: 15px; }
   .header_info_time {
-    display: none; } }
+    display: none; }
+  .cashback-title_container {
+    padding-top: 70px;
+    padding-bottom: 50px; }
+    .cashback-title_container .__title {
+      font-size: 46px; }
+  .cashback-main_left-text .__content {
+    max-width: 400px; }
+  .cashback-main_left-text {
+    background-size: 300px 450px; }
+  .delivery-page-title_container .__describe {
+    font-size: 21px; }
+  .delivery-page_content_tabs_position_row_col.md {
+    min-width: 180px; }
+  .faq-page-main_sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate3d(-100vw, 0, 0);
+    background-color: #ffffff;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 1001;
+    padding-top: 30px;
+    padding-right: 25px;
+    padding-left: 25px;
+    transition: 0.4s ease all;
+    max-width: 210px; }
+    .faq-page-main_sidebar::-webkit-scrollbar {
+      width: 5px; }
+    .faq-page-main_sidebar::-webkit-scrollbar-track {
+      background-color: #ffffff;
+      border-radius: 8px; }
+    .faq-page-main_sidebar::-webkit-scrollbar-thumb {
+      background-color: #d90952;
+      border-radius: 8px; }
+    .faq-page-main_sidebar::-webkit-scrollbar {
+      width: 5px;
+      background-color: #ffffff;
+      border-radius: 8px; }
+    .faq-page-main_sidebar.__open {
+      transform: translate3d(0, 0, 0); }
+  .faq-page-main_sidebar_sm_btn {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    transition: 0.4s ease all;
+    z-index: 1000; }
+    .faq-page-main_sidebar_sm_btn.__open {
+      left: 230px; }
+      .faq-page-main_sidebar_sm_btn.__open .__btn .__line:first-child {
+        transform: rotate(-45deg);
+        left: 5px;
+        right: auto; }
+      .faq-page-main_sidebar_sm_btn.__open .__btn .__line:last-child {
+        transform: rotate(45deg);
+        left: 5px;
+        right: auto; }
+    .faq-page-main_sidebar_sm_btn .__btn {
+      background-color: transparent;
+      outline: 0;
+      border: none;
+      position: relative; }
+      .faq-page-main_sidebar_sm_btn .__btn .__line {
+        width: 20px;
+        height: 2px;
+        background-color: #d90952;
+        display: block;
+        margin: 5px auto; }
+        .faq-page-main_sidebar_sm_btn .__btn .__line:first-child {
+          width: 9px;
+          transform: rotate(45deg);
+          position: absolute;
+          top: -2px;
+          right: 5px; }
+        .faq-page-main_sidebar_sm_btn .__btn .__line:last-child {
+          width: 9px;
+          transform: rotate(-45deg);
+          position: absolute;
+          bottom: -2px;
+          right: 5px; }
+  .how-buy-page_content_bgi {
+    display: none; }
+  .how-buy-page_content_position .__content {
+    font-size: 13px; }
+  .how-buy-page_content_position.first {
+    flex: 0 0 50%; }
+  .how-buy-page_content_position.second {
+    flex: 0 0 50%; }
+  .market-page_content_sidebar {
+    min-height: 0; }
+    .market-page_content_sidebar .__btn {
+      display: block;
+      border: none;
+      outline: 0;
+      margin: 0 auto 30px;
+      text-align: center;
+      background-color: transparent; }
+      .market-page_content_sidebar .__btn .__line {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #d90952;
+        margin: 5px auto;
+        text-align: center;
+        transition: 0.5s ease all; }
+      .market-page_content_sidebar .__btn.__open {
+        overflow: hidden; }
+        .market-page_content_sidebar .__btn.__open .__line:first-child {
+          transform: rotate(45deg) translateY(11px); }
+        .market-page_content_sidebar .__btn.__open .__line:nth-child(2) {
+          transform: translateX(-50vw); }
+        .market-page_content_sidebar .__btn.__open .__line:last-child {
+          transform: rotate(-45deg) translateY(-11px); }
+  .market-page_content_sidebar_list {
+    max-height: 0;
+    min-height: 0;
+    transition: 0.7s ease all;
+    margin-bottom: 30px; }
+    .market-page_content_sidebar_list.__open {
+      max-height: 1000px;
+      overflow: visible; }
+  .marketpage_content_position_full {
+    max-height: 1000px;
+    opacity: 1;
+    position: static; }
+    .marketpage_content_position_full .__content,
+    .marketpage_content_position_full .__site,
+    .marketpage_content_position_full .__payments,
+    .marketpage_content_position_full .__price,
+    .marketpage_content_position_full .__info {
+      opacity: 1;
+      max-height: 1000px; }
+  .prices-main {
+    background-image: none; }
+  .prices-main_container {
+    padding-top: 30px;
+    margin-bottom: 30px; }
+  .prices-main_positions-left-right_position.left {
+    margin-left: auto; }
+  .prices-main_positions-left-right_position.right {
+    margin-right: auto; }
+  .prices-main_positions-full {
+    flex-wrap: wrap; }
+  .prices-main_positions-full .prices-main_positions-left-right_position {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px; }
+  .prices-main_btn-link {
+    margin-top: 30px;
+    margin-bottom: 50px; }
+  .prices-bonuse_container_title .__title {
+    white-space: nowrap; }
+  .prices-bonuse_position {
+    min-height: 0;
+    margin-bottom: 30px; }
+  .home-payments-method_title > .__title {
+    font-size: 36px; }
+  .why-buy_content {
+    margin-top: 0; }
+  .why-buy_content_position_content .__title {
+    line-height: 1;
+    font-size: 27px; }
+  .why-buy_content_position {
+    margin-right: 20px;
+    margin-left: 20px; } }
 
 @media screen and (max-width: 768px) {
   .home-short-info_menu_btn_mobile {
@@ -2782,7 +3017,8 @@ footer {
   .bonuses-page_content_info {
     margin-top: 30px;
     margin-bottom: 25px; }
-  .home-start-shopping_title > .__title {
+  .home-start-shopping_title > .__title,
+  .cashback-title_container .__title {
     font-size: 32px; }
   .home-start-shopping_calculate .__btn {
     line-height: 1;
@@ -2791,8 +3027,268 @@ footer {
     margin-top: 50px; }
   .home-start-shopping {
     margin-bottom: 40px; }
-  .bonuses-page-title_container {
-    padding-top: 30px; } }
+  .bonuses-page-title_container,
+  .cashback-title_container {
+    padding-top: 30px;
+    padding-bottom: 35px; }
+  .cashback-main_left-text {
+    background-image: none; }
+  .cashback-title_container .__describe {
+    font-size: 24px; }
+  .delivery-page_content_list .__list li {
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px; }
+  .delivery-page_content_tabs_position_info .__content {
+    font-size: 12px;
+    margin-right: 15px; }
+  .delivery-page_content_tabs_position_info .__deadlines {
+    font-size: 12px; }
+  .delivery-page_content_tabs {
+    padding: 12px; }
+  .delivery-page_content_tabs_position_row {
+    flex-wrap: wrap;
+    margin-top: 0; }
+  .delivery-page_content_tabs_position_row_col {
+    flex: 0 0 100%;
+    margin: 0 0 15px;
+    text-align: center;
+    padding: 5px; }
+    .delivery-page_content_tabs_position_row_col.logo {
+      text-align: center; }
+    .delivery-page_content_tabs_position_row_col.md {
+      flex: 0 0 100%;
+      max-width: 1000px;
+      min-width: 0; }
+    .delivery-page_content_tabs_position_row_col.sm {
+      flex: 0 0 100%;
+      min-width: 0;
+      max-width: 1000px; }
+    .delivery-page_content_tabs_position_row_col.lg {
+      flex: 0 0 100%;
+      max-width: 1000px;
+      min-width: 0; }
+  .faq-page-main {
+    margin-top: 30px; }
+  .faq-page-main_sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate3d(-100vw, 0, 0);
+    background-color: #ffffff;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 1001;
+    padding-top: 30px;
+    padding-right: 25px;
+    padding-left: 25px;
+    transition: 0.4s ease all;
+    max-width: 210px; }
+    .faq-page-main_sidebar::-webkit-scrollbar {
+      width: 5px; }
+    .faq-page-main_sidebar::-webkit-scrollbar-track {
+      background-color: #ffffff;
+      border-radius: 8px; }
+    .faq-page-main_sidebar::-webkit-scrollbar-thumb {
+      background-color: #d90952;
+      border-radius: 8px; }
+    .faq-page-main_sidebar::-webkit-scrollbar {
+      width: 5px;
+      background-color: #ffffff;
+      border-radius: 8px; }
+    .faq-page-main_sidebar.__open {
+      transform: translate3d(0, 0, 0); }
+  .faq-page-main_sidebar_sm_btn {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    transition: 0.4s ease all;
+    z-index: 1000; }
+    .faq-page-main_sidebar_sm_btn.__open {
+      left: 230px; }
+      .faq-page-main_sidebar_sm_btn.__open .__btn .__line:first-child {
+        transform: rotate(-45deg);
+        left: 5px;
+        right: auto; }
+      .faq-page-main_sidebar_sm_btn.__open .__btn .__line:last-child {
+        transform: rotate(45deg);
+        left: 5px;
+        right: auto; }
+    .faq-page-main_sidebar_sm_btn .__btn {
+      background-color: transparent;
+      outline: 0;
+      border: none;
+      position: relative; }
+      .faq-page-main_sidebar_sm_btn .__btn .__line {
+        width: 20px;
+        height: 2px;
+        background-color: #d90952;
+        display: block;
+        margin: 5px auto; }
+        .faq-page-main_sidebar_sm_btn .__btn .__line:first-child {
+          width: 9px;
+          transform: rotate(45deg);
+          position: absolute;
+          top: -2px;
+          right: 5px; }
+        .faq-page-main_sidebar_sm_btn .__btn .__line:last-child {
+          width: 9px;
+          transform: rotate(-45deg);
+          position: absolute;
+          bottom: -2px;
+          right: 5px; }
+  .faq-page-main_tabs_position_content_title .__title {
+    font-size: 36px; }
+  .faq-page-main_tabs_position_content {
+    padding-left: 5px;
+    padding-right: 5px; }
+  .faq-page-main_tabs_position_content_main .__title-main {
+    font-size: 22px; }
+  .how-buy-page-title_container .__title {
+    font-size: 36px; }
+  .how-buy-page-title_container .__describe {
+    font-size: 22px; }
+  .how-buy-page_content_bgi {
+    display: none; }
+  .how-buy-page_content_row {
+    flex-wrap: wrap; }
+  .how-buy-page_content_position {
+    padding-right: 8px;
+    padding-left: 60px; }
+    .how-buy-page_content_position.first {
+      flex: 0 0 100%; }
+    .how-buy-page_content_position.second {
+      flex: 0 0 100%; }
+    .how-buy-page_content_position.third {
+      flex: 0 0 100%; }
+    .how-buy-page_content_position.fourth {
+      flex: 0 0 100%; }
+    .how-buy-page_content_position .__number {
+      padding: 15px;
+      margin-left: 5px; }
+    .how-buy-page_content_position .__title {
+      margin-top: 10px; }
+      .how-buy-page_content_position .__title .__line {
+        display: none; }
+    .how-buy-page_content_position .__content {
+      font-size: 12px; }
+  .market-page_content_sidebar {
+    min-height: 0; }
+    .market-page_content_sidebar .__btn {
+      display: block;
+      border: none;
+      outline: 0;
+      margin: 0 auto 30px;
+      text-align: center;
+      background-color: transparent; }
+      .market-page_content_sidebar .__btn .__line {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #d90952;
+        margin: 5px auto;
+        text-align: center;
+        transition: 0.5s ease all; }
+      .market-page_content_sidebar .__btn.__open {
+        overflow: hidden; }
+        .market-page_content_sidebar .__btn.__open .__line:first-child {
+          transform: rotate(45deg) translateY(11px); }
+        .market-page_content_sidebar .__btn.__open .__line:nth-child(2) {
+          transform: translateX(-50vw); }
+        .market-page_content_sidebar .__btn.__open .__line:last-child {
+          transform: rotate(-45deg) translateY(-11px); }
+  .market-page_content_sidebar_list {
+    max-height: 0;
+    min-height: 0;
+    transition: 0.7s ease all;
+    margin-bottom: 30px; }
+    .market-page_content_sidebar_list.__open {
+      max-height: 1000px;
+      overflow: visible; }
+  .marketpage_content_position_full {
+    max-height: 1000px;
+    opacity: 1;
+    position: static; }
+    .marketpage_content_position_full .__content,
+    .marketpage_content_position_full .__site,
+    .marketpage_content_position_full .__payments,
+    .marketpage_content_position_full .__price,
+    .marketpage_content_position_full .__info {
+      opacity: 1;
+      max-height: 1000px; }
+  .market-page_content_position_short img {
+    margin: 0 auto; }
+  .home-short-info_menu_list_container .__container .__nav .__list li {
+    margin: 8px auto; }
+  .prices-main {
+    background-image: none; }
+  .prices-main_container {
+    padding-top: 30px; }
+  .prices-main_positions-left-right {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0;
+    margin-top: 0; }
+  .prices-main_positions-left-right_position {
+    min-width: 0;
+    flex: 0 0 100%;
+    margin-bottom: 30px; }
+  .prices-main_positions-full {
+    flex-wrap: wrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 0;
+    margin-bottom: 0; }
+    .prices-main_positions-full .prices-main_positions-left-right_position {
+      max-width: 100%;
+      flex: 0 0 100%;
+      margin-top: 0;
+      margin-bottom: 30px; }
+  .prices-main_btn-link .__link {
+    padding-left: 30px;
+    padding-right: 30px; }
+  .prices-main_btn-link {
+    margin-top: 30px; }
+  .prices-bonuse_container_title .__title {
+    font-size: 24px; }
+  .prices-bonuse_container {
+    padding: 30px 10px 15px; }
+  .prices-bonuse_position {
+    min-height: 0;
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 30px; }
+  .why-buy_content {
+    margin-top: 0; }
+  .why-buy_content_position {
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 11px 10px 20px;
+    text-align: center;
+    flex-wrap: wrap; }
+  .why-buy_content_position_content {
+    margin-right: 0;
+    flex: 0 0 100%;
+    padding-top: 15px; }
+    .why-buy_content_position_content .__title {
+      line-height: 1.1;
+      font-size: 24px; }
+  .why-buy_content_position_img {
+    margin-left: 0;
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin-top: 20px; }
+    .why-buy_content_position_img img {
+      margin: 0 auto;
+      margin-top: 0; }
+  .why-buy_content {
+    margin-bottom: 50px; } }
 
 @media screen and (width: 768px) {
   .footer-foot {
