@@ -3616,12 +3616,25 @@ footer {
     flex-wrap: wrap; }
   .why-buy_content_position_content {
     margin-right: 0;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
     padding-top: 15px; }
     .why-buy_content_position_content .__title {
       line-height: 1.1;
       font-size: 24px; }
   .why-buy_content_position_img {
-    margin-left: 0; } }
+    margin-left: 0;
+    max-width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    margin-top: 20px; }
+    .why-buy_content_position_img img {
+      margin: 0 auto;
+      margin-top: 0; }
+  .why-buy_content {
+    margin-bottom: 50px; } }
 
 @media screen and (width: 768px) {
   .footer-foot {
