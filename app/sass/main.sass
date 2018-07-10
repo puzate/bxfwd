@@ -44,10 +44,12 @@ header
 .header_logo
 	padding-top: 5px
 .header_info_menu_main
-	display: inline-block
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
 	text-align: left
-.header-open_menu
-	posa+t0+l0
 .header_info_menu_main_list
 	text-align: left
 	display: -webkit-flex
@@ -59,10 +61,13 @@ header
 	justify-content: space-between
 	padding: 0
 	margin: 0 auto
+	flex-wrap: wrap
+	max-width: 260px
+	margin: 260px
+	list-style-type: none
 	li
 		text-align: left
-		display: inline-block
-		margin: 0 5px
+		margin: 0 0px
 		&:first-child
 			margin-left: 0
 		&:last-child
@@ -80,12 +85,7 @@ header
 	max-width: 1300px
 	margin: 0 auto
 .home-short-info-main
-	position: absolute
-	top: 0px
-	left: 10px
-	width: 100px
-	height: 100px
-	z-index: 999
+	position: static
 .home-short-info_menu_btn
 	position: relative
 	z-index: 2
@@ -171,10 +171,22 @@ header
 	border: none
 	background-color: transparent
 	padding: 0
-	display: block
+	display: flex
+	align-items: center
 	svg
 		width: 25px
 		height: 40px
+	.__content
+		color: $cerise
+		letter-spacing: 0.4px
+		white-space: wrap
+		max-width: 50px
+		flex: 0 0 50px
+		line-height: 1.33
+		font-size: 12px
+		padding-left: 5px
+	&:hover
+		text-decoration: none
 .header_info_time_img
 	margin-bottom: 0
 	display: inline-block
@@ -322,9 +334,6 @@ header
 	margin: 0 auto
 	position: relative
 .home-short-info_menu
-	top: 55px
-	left: 10px
-	position: absolute
 .home-short-info_menu_btn
 .home-short-info_menu_btn-button
 	outline: 0
@@ -2058,6 +2067,570 @@ footer
 // FAQ PAGE ENDS
 .faq-page-main_sidebar_sm_btn
 	display: none
+// CALCULATOR PAGE STARTS
+.calculator-page-title
+	position: relative
+	// background-image: linear-gradient(to top, #e5f3f7, rgba(227, 241, 245, 0))
+.calculator-page-title_bgi
+	position: absolute
+	top: 0
+	left: 0
+	z-index: -1
+	right: 0
+	svg
+		fill: #f8fbfc
+		path
+			fill: #e3f1f5
+.calculator-page-title_container
+	padding-top: 113px
+	padding-bottom: 70px
+	text-align: center
+	margin: 0 auto
+	overflow-x: visible
+	.__title
+		margin-bottom: 19px
+		font-family: $pt-bold
+		font-size: 52px
+		letter-spacing: -0.4px
+		line-height: 1.38
+		color: $dark-sea-green
+	.__describe
+		color: $charcoal-grey
+		line-height: 1.38
+		letter-spacing: 0.2px
+		font-size: 26px
+		font-family: $pt-bold
+		max-width: 1200px
+		margin: 0 auto
+.calculator-page-content
+	margin-top: 30px
+	position: relative
+	padding-top: 110px
+.calculator-page-content_main-bgi
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	z-index: -1
+.calculator-page-content_foot-bgi
+	height: 320px
+	margin-top: -360px
+	z-index: 2
+	svg
+		fill: none
+.calculator-page-content_container
+	max-width: 1200px
+	padding-bottom: 200px
+	margin: 0 auto
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: flex-start
+	justify-content: space-between
+.calculator-page-content_dropdowns-select
+	margin-right: auto
+	.__select-container
+		margin-bottom: 25px
+		select, input, option, datalist
+			min-width: 272px
+			height: 48px
+			background-color: $white
+			box-shadow: 0 2px 4px 0 #a1a4b4
+			border: 3px solid $dark-sea-green
+			outline: 0
+			padding: 14px 14px 14px 9px
+			color: $charcoal-grey
+			font-size: 12px
+			letter-spacing: -0.1px
+			-webkit-appearance: none
+			-moz-appearance: none
+			text-indent: 1px
+			text-overflow: ''
+			&:hover
+				-webkit-appearance: none
+				-moz-appearance: none
+				text-indent: 1px
+				text-overflow: ''
+			&:focus
+				-webkit-appearance: none
+				-moz-appearance: none
+				text-indent: 1px
+				text-overflow: ''
+#ui-id-1
+	display: none!important
+.calculator-page-content_calculator-main
+	position: relative
+	z-index: 3
+	margin-left: 50px
+	margin-right: 40px
+	max-width: 550px
+	min-height: 750px
+	.__container-range
+		display: block
+		margin: 0 auto
+		max-width: 520px
+		padding-top: 40px
+		position: relative
+	.__container-price
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		.__usps-express
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			margin-top: 40px
+			position: relative
+			min-width: 140px
+			.__main
+				text-align: center
+				.__svg
+					display: block
+					svg
+						width: 20px
+						height: 39px
+						fill: $black
+				.__circle
+					width: 18px
+					height: 18px
+					background-color: $charcoal-grey
+					border-radius: 50px
+					display: block
+					margin: -2px auto 0
+				.__line
+					height: 144px
+					width: 3px
+					background-color: $charcoal-grey
+					display: inline-block
+					text-align: center
+					margin-left: 2px
+				.__name
+					margin-top: -5px
+					display: block
+					font-size: 20px
+					color: $charcoal-grey
+					font-family: $pt-bold
+					height: 84px
+					width: 84px
+					background-color: $white
+					border: 6px solid $charcoal-grey
+					border-radius: 500px
+					line-height: 71px
+					text-transform: uppercase
+					letter-spacing: -0.2px
+			.__title
+				position: absolute
+				top: 10px
+				right: -29px
+				width: 110px
+				.__price
+					display: block
+					letter-spacing: -0.3px
+					color: #818594
+					font-size: 25px
+					font-family: $pt-bold
+					opacity: 0.6
+					span
+						font-size: 34px
+						color: $cerise
+				.__delivery
+					margin-top: 4px
+					display: block
+					text-decoration: underline
+					font-size: 21px
+					color: $charcoal-grey
+					font-family: $pt-bold
+					letter-spacing: -0.2px
+		.__usps-priority
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			position: relative
+			min-width: 140px
+			.__main
+				text-align: center
+				.__svg
+					display: block
+					svg
+						width: 20px
+						height: 39px
+						g
+							path
+								fill: $dark-sea-green
+								stroke: $dark-sea-green
+				.__circle
+					width: 18px
+					height: 18px
+					background-color: $dark-sea-green
+					border-radius: 50px
+					display: block
+					margin: -2px auto 0
+				.__line
+					height: 168px
+					width: 3px
+					background-color: $dark-sea-green
+					display: inline-block
+					text-align: center
+					margin-left: 2px
+				.__name
+					margin-top: -5px
+					display: block
+					font-size: 20px
+					color: $white
+					font-family: $pt-bold
+					height: 84px
+					width: 84px
+					background-color: $dark-sea-green
+					border: 6px solid $dark-sea-green
+					border-radius: 500px
+					line-height: 71px
+					text-transform: uppercase
+					letter-spacing: -0.2px
+			.__title
+				position: absolute
+				right: -50px
+				top: 10px
+				.__price
+					display: block
+					letter-spacing: -0.3px
+					color: #818594
+					font-size: 25px
+					font-family: $pt-bold
+					opacity: 0.6
+					span
+						font-size: 34px
+						color: $cerise
+				.__delivery
+					margin-top: 4px
+					display: block
+					text-decoration: underline
+					font-size: 21px
+					color: $dark-sea-green
+					font-family: $pt-bold
+					letter-spacing: -0.2px
+		.__boxberry
+			margin-top: 80px
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			position: relative
+			justify-content: flex-end
+			min-width: 140px
+			.__main
+				text-align: center
+				.__svg
+					display: block
+					svg
+						width: 20px
+						height: 39px
+						g
+							path
+								fill: $cerise
+								stroke: $cerise
+				.__circle
+					width: 18px
+					height: 18px
+					background-color: $cerise
+					border-radius: 50px
+					display: block
+					margin: -2px auto 0
+				.__line
+					height: 142px
+					width: 3px
+					background-color: $cerise
+					display: inline-block
+					text-align: center
+					margin-left: 2px
+				.__name
+					margin-top: -5px
+					display: block
+					font-size: 14px
+					color: $white
+					font-family: $pt-bold
+					height: 84px
+					width: 84px
+					background-color: $cerise
+					border: 6px solid $cerise
+					border-radius: 500px
+					line-height: 71px
+					letter-spacing: -0.1px
+			.__title
+				position: absolute
+				left: -20px
+				top: 10px
+				.__price
+					display: block
+					letter-spacing: -0.3px
+					color: #818594
+					font-size: 25px
+					font-family: $pt-bold
+					opacity: 0.6
+					text-align: right
+					span
+						font-size: 34px
+						color: $cerise
+				.__delivery
+					margin-top: 4px
+					display: block
+					text-decoration: underline
+					font-size: 21px
+					color: $cerise
+					font-family: $pt-bold
+					letter-spacing: -0.2px
+		.__boxberry-delivery
+			margin-top: -30px
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			margin-left: 50px
+			.__main
+				text-align: center
+				.__svg
+					display: block
+					svg
+						width: 20px
+						height: 39px
+						g
+							path
+								fill: $deep-sky-blue
+								stroke: $deep-sky-blue
+				.__circle
+					width: 18px
+					height: 18px
+					background-color: $deep-sky-blue
+					border-radius: 50px
+					display: block
+					margin: -2px auto 0
+				.__line
+					height: 142px
+					width: 3px
+					background-color: $deep-sky-blue
+					display: inline-block
+					text-align: center
+					margin-left: 2px
+				.__name
+					margin-top: -5px
+					display: block
+					font-size: 14px
+					color: $white
+					font-family: $pt-bold
+					height: 84px
+					width: 84px
+					background-color: $deep-sky-blue
+					border: 6px solid $deep-sky-blue
+					border-radius: 500px
+					line-height: 71px
+					letter-spacing: -0.1px
+			.__title
+				margin-left: -15px
+				margin-top: 10px
+				.__price
+					display: block
+					letter-spacing: -0.3px
+					color: #818594
+					font-size: 25px
+					font-family: $pt-bold
+					opacity: 0.6
+					span
+						font-size: 34px
+						color: $deep-sky-blue
+				.__delivery
+					margin-top: 4px
+					display: block
+					text-decoration: underline
+					font-size: 21px
+					color: $deep-sky-blue
+					font-family: $pt-bold
+					letter-spacing: -0.2px
+	.__container-info
+		margin-top: 55px
+		margin-bottom: 60px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		position: relative
+		z-index: 3
+		padding-right: 30px
+		padding-left: 30px
+		.__container-value
+			position: relative
+			padding: 50px 0 0
+			border: 8px solid $dark-sea-green
+			border-radius: 1000px
+			width: 194px
+			height: 194px
+			position: relative
+			z-index: -1
+			&.weight
+				margin-right: auto
+				margin-left: 50px
+				padding-left: 20px
+				&:before
+					content: ''
+					position: absolute
+					left: -17px
+					top: 50%
+					transform: translateY(-50%)
+					width: 25px
+					height: 5px
+					background-color: $dark-sea-green
+			.__title
+				font-size: 16px
+				color: $charcoal-grey
+				letter-spacing: -0.2px
+				font-family: $pt-bold
+				margin-bottom: 0
+				position: absolute
+				left: -15px
+				top: 0
+			.__input-container
+				label
+					text-transform: uppercase
+					margin-bottom: 3px
+					font-size: 21px
+					font-family: $pt-bold
+					color: #818594
+					letter-spacing: -0.2px
+				input
+					border: none
+					outline: 0
+					background-color: transparent
+					font-size: 34px
+					font-family: $pt-bold
+					letter-spacing: -0.2px
+					max-width: 100%
+					color: $charcoal-grey
+			&.price
+				text-align: right
+				margin-right: 50px
+				padding-right: 20px
+				&:before
+					content: ''
+					position: absolute
+					right: -17px
+					top: 50%
+					transform: translateY(-50%)
+					width: 25px
+					height: 5px
+					background-color: $dark-sea-green
+				.__title
+					left: auto
+					right: -15px
+				.__input-container
+					input
+						text-align: right
+						&::-webkit-outer-spin-button
+							-webkit-appearance: none
+							-moz-appearance: none
+							appearance: none
+							margin: 0
+						&::-webkit-inner-spin-button
+							-webkit-appearance: none
+							-moz-appearance: none
+							appearance: none
+							margin: 0
+		.container-info_bgi
+			position: absolute
+			top: 0
+			left: 50%
+			max-width: 194px
+			max-height: 194px
+			transform: translateX(-50%)
+	.__info
+		position: absolute
+		top: 0
+		right: 0
+		color: #646773
+		font-size: 10px
+		font-family: $pt-bold
+		letter-spacing: -0.1px
+	.__output-range
+		position: absolute
+		top: 0
+		left: 0
+	.__input-range
+		-webkit-appearance: none
+		&::-webkit-range-progress
+			background-color: red
+		&:focus
+			outline: 0
+	input[type="range"]::-moz-range-progress
+		background-color: #43e5f7
+	input[type='range']
+		width: 520px
+		-webkit-appearance: none
+		background-color: $dark-sea-green
+	input[type='range']::-webkit-slider-runnable-track
+		height: 16px
+		-webkit-appearance: none
+		color: #13bba4
+		overflow: visible
+	input[type='range']::-webkit-slider-thumb
+		width: 31px
+		-webkit-appearance: none
+		z-index: 2
+		position: relative
+		top: -8px
+		border-radius: 150px
+		border: 3px solid $charcoal-grey
+		height: 31px
+		cursor: pointer
+		background: $white
+	input[type="range"]::-moz-range-progress
+		background-color: #43e5f7
+	input[type="range"]::-moz-range-track
+		background-color: #9a905d
+	input[type="range"]::-ms-fill-lower
+		background-color: #43e5f7
+	input[type="range"]::-ms-fill-upper
+		background-color: #9a905d
+.setyear
+	position: absolute
+	top: -20px
+	left: -40px
+	line-height: 38px
+	width: 38px
+	height: 38px
+	text-align: center
+	white-space: nowrap
+	font-size: 13.5px
+	font-family: $pt-bold
+	color: $white
+	background-color: $black
+	&:after
+		content: ''
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 5px 2.5px 0 2.5px
+		border-color: #000000 transparent transparent transparent
+		position: absolute
+		bottom: -5px
+		left: 50%
+		transform: translateX(-50%)
+.calculator-page-content_insur-info
+	max-width: 280px
+	.__content
+		font-size: 13.5px
+		letter-spacing: -0.1px
+		color: $charcoal-grey
+		font-family: $pt-bold
+// CALCULATOR PAGE ENDS
 @import "_animation.sass"
 @import "_hover.sass"
 @import "_media.sass"

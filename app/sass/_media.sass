@@ -83,6 +83,24 @@
 		margin-bottom: 80px
 	.why-buy_content
 		margin-top: 50px
+	.calculator-page-title_container
+		max-width: 850px
+		margin: 0 auto
+		padding-bottom: 0
+	.calculator-page-content
+		margin-top: 0
+		padding-top: 50px
+	.calculator-page-content_dropdowns-select
+		max-width: 230px
+	.calculator-page-content_dropdowns-select .__select-container select, .calculator-page-content_dropdowns-select .__select-container input, .calculator-page-content_dropdowns-select .__select-container option, .calculator-page-content_dropdowns-select .__select-container datalist
+		min-width: 230px
+	.calculator-page-content_calculator-main
+		margin-left: 25px
+		margin-right: 25px
+	.calculator-page-content_insur-info .__content
+		font-size: 11px
+	.calculator-page-content_container
+		padding-bottom: 221px
 @media screen and (max-width: 1270px) and (min-width: 1200px)
 	.home-short-info_describe
 		padding-left: 50px
@@ -342,6 +360,33 @@
 	.why-buy_content_position
 		margin-right: 20px
 		margin-left: 20px
+	.calculator-page-content_container
+		flex-wrap: wrap
+		justify-content: center
+	.calculator-page-content_insur-info
+		flex: 3 0 100%
+		max-width: 100%
+		padding-left: 50px
+		padding-right: 50px
+	.calculator-page-content_dropdowns-select
+		margin-right: 10px
+	.calculator-page-content_calculator-main
+		max-width: 400px
+	.calculator-page-content_calculator-main input[type='range']
+		max-width: 100%
+	.calculator-page-content_calculator-main .__container-info .container-info_bgi
+		display: none
+	.calculator-page-content_calculator-main .__container-info .__container-value.weight
+		margin-left: 0
+	.calculator-page-content_calculator-main .__container-info
+		margin-bottom: 20px
+		padding-left: 5px
+		padding-right: 5px
+	.calculator-page-content_calculator-main .__container-price
+		margin-left: -250px
+		margin-top: 50px
+	.calculator-page-content_foot-bgi
+		display: none
 @media screen and (max-width: 768px)
 	.home-short-info_menu_btn_mobile
 		position: relative
@@ -827,6 +872,98 @@
 			margin-top: 0
 	.why-buy_content
 		margin-bottom: 50px
+	.calculator-page-title_container
+		padding-top: 30px
+		.__title
+			font-size: 36px
+	.calculator-page-content_dropdowns-select
+		max-width: 100%
+		margin-right: 0
+	.calculator-page-content_container
+		flex-wrap: wrap
+		justify-content: center
+	.calculator-page-content_calculator-main input[type='range']
+		max-width: 100%
+		width: 100%
+	.calculator-page-content_calculator-main
+		max-width: 100%
+		margin-right: 0
+		margin-left: 0
+		padding-right: 15px
+		padding-left: 15px
+	.calculator-page-content_calculator-main .__container-info .container-info_bgi
+		display: none
+	.calculator-page-content_calculator-main .__container-info
+		flex-wrap: wrap
+		justify-content: center
+	.calculator-page-content_calculator-main .__container-info .__container-value
+		&.weight,
+		&.price
+			padding-left: 0
+			margin-left: 0
+			margin-right: 0
+			padding-top: 25px
+			text-align: center
+			padding-right: 0
+			margin-bottom: 20px
+			&:before
+				content: none
+	.calculator-page-content_container
+		padding-bottom: 50px
+	.calculator-page-content_foot-bgi
+		display: none
+	.calculator-page-content_calculator-main .__container-info .__container-value .__title
+		position: static
+		margin-bottom: 15px
+	.calculator-page-content_calculator-main .__container-info .__container-value .__input-container input
+		text-align: center
+	.calculator-page-content_calculator-main .__container-info .__container-value.price .__input-container input
+		text-align: center
+	.calculator-page-content_calculator-main .__container-price
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+		>div
+			flex: 0 0 50%
+			margin-top: 0 !important
+			margin-bottom: 20px
+			min-width: auto !important
+			.__main
+				.__line
+					display: none!important
+				.__circle
+					display: none !important
+			.__title
+				position: static!important
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				align-items: center
+				flex-wrap: wrap
+				margin-left: 15px
+	.calculator-page-content_calculator-main .__container-price .__boxberry .__main
+		order: -1
+	.calculator-page-content_calculator-main .__container-price .__boxberry .__title
+		flex: 0 0 50%
+	.calculator-page-content_calculator-main .__container-price .__boxberry .__main
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+	.calculator-page-content_calculator-main .__container-price .__boxberry .__main .__svg
+		order: -1
+		flex: 0 0 100%
+	.calculator-page-content_calculator-main .__container-price .__boxberry-delivery .__title
+		margin-left: 15px
+	.calculator-page-content_calculator-main .__container-price .__boxberry-delivery
+		margin-left: 0
+	.calculator-page-content_main-bgi
+		display: none
 @media screen and (width: 768px)
 	.footer-foot
 		position: static
