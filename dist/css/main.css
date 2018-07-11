@@ -89,23 +89,19 @@ header {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 0;
   margin: 0 auto;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   max-width: 260px;
-  margin: 260px;
+  min-width: 260px;
   list-style-type: none; }
   .header_info_menu_main_list li {
     text-align: left;
-    margin: 0 0px; }
-    .header_info_menu_main_list li:first-child {
-      margin-left: 0; }
-    .header_info_menu_main_list li:last-child {
-      margin-right: 0; }
+    margin: 0 8px; }
     .header_info_menu_main_list li a {
       display: block;
       text-transform: uppercase;

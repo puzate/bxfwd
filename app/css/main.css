@@ -82,20 +82,16 @@ header {
   display: -o-flex;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0;
   margin: 0 auto;
   flex-wrap: wrap;
   max-width: 260px;
-  margin: 260px;
+  min-width: 260px;
   list-style-type: none; }
   .header_info_menu_main_list li {
     text-align: left;
-    margin: 0 0px; }
-    .header_info_menu_main_list li:first-child {
-      margin-left: 0; }
-    .header_info_menu_main_list li:last-child {
-      margin-right: 0; }
+    margin: 0 8px; }
     .header_info_menu_main_list li a {
       display: block;
       text-transform: uppercase;
@@ -168,9 +164,19 @@ header {
     .home-short-info_menu_list_container .__container .__nav .__list {
       list-style-type: none;
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      align-items: space-between;
+      flex-wrap: wrap; }
       .home-short-info_menu_list_container .__container .__nav .__list li {
-        margin: 5px 0; }
+        margin: 10px 0;
+        flex: 0 0 50%; }
+        .home-short-info_menu_list_container .__container .__nav .__list li:nth-child(2n-1) {
+          margin-left: auto; }
         .home-short-info_menu_list_container .__container .__nav .__list li a {
           color: #0080ff;
           transition: 0.4s ease all; }
@@ -682,6 +688,7 @@ header {
     outline: 0; }
 
 .home-reviews {
+  margin-top: 100px;
   margin-bottom: 100px; }
 
 .home-reviews_position {
@@ -693,7 +700,7 @@ header {
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: nowrap;
-  padding: 31px 47px 27px 17px;
+  padding: 31px 31px 27px 17px;
   background-color: #ffffff;
   box-shadow: 10px 14px 0 0 #d5d7de;
   border-radius: 8px; }
@@ -709,24 +716,24 @@ header {
   .home-reviews_position .__content .__describe {
     line-height: 1.58;
     color: #646773;
-    font-size: 12px;
+    font-size: 15px;
     margin-top: 0;
     margin-bottom: 16px; }
   .home-reviews_position .__content .__info .__date {
     display: block;
-    font-size: 9px;
+    font-size: 11px;
     color: #a1a4b4;
     line-height: 1.78; }
   .home-reviews_position .__content .__info .__package-number {
     display: block;
-    font-size: 9px;
+    font-size: 11px;
     color: #a1a4b4;
     line-height: 1.78;
     margin-bottom: 8px; }
   .home-reviews_position .__content .__info .__delivery {
     color: #d90952;
     display: block;
-    font-size: 9px;
+    font-size: 11px;
     line-height: 1.78; }
 
 .home-payments-method {
