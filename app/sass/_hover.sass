@@ -85,15 +85,57 @@
 				.__content, .__site, .__payments, .__price, .__info
 					opacity: 1
 					max-height: 1000px
+	.header_info_login.login .__balance
+		a
+			color: #0080ff
+			&:hover
+				text-decoration: none
 	.market-page_pagination_list
 		li
 			a
 				&:hover
 					text-decoration: none
 					color: $cerise
+			&.active
+				a
+					&:hover
+						color: $white
 	.faq-page-main_sidebar_list
 		li
 			a
 				&:hover
 					text-decoration: none
 					color: $gunmetal
+	@keyframes phone-btn
+		0%
+			transform: rotate(0deg)
+		20%
+			transform: rotate(20deg)
+		40%
+			transform: rotate(40deg)
+		50%
+			transform: rotate(50deg)
+		60%
+			transform: rotate(40deg)
+		80%
+			transform: rotate(20deg)
+		100%
+			transform: rotate(0deg)
+	.home-about-us_feedback-form_btn
+		.__btn
+			&:hover
+				animation: phone-btn .3s linear infinite
+	.header_info_login.login .__icon-user .__list li a
+		&:hover
+			color: $cerise
+			text-decoration: none
+	.delivery-page_content_tabs_position_p-s
+		.__link
+			&:hover
+				text-decoration: none
+				color: $cerise
+	.how-buy-page_content_position
+		.__more,
+		.__close
+			&:hover
+				color: $cerise

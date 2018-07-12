@@ -10,7 +10,8 @@ body
 		margin-right: 17px
 		z-index: 1000
 		header
-			z-index: 2
+			.header-container
+				z-index: 2
 		.__shadow
 			z-index: 120
 			opacity: 1
@@ -58,7 +59,7 @@ header
 	display: -o-flex
 	display: flex
 	align-items: flex-start
-	justify-content: center
+	justify-content: flex-start
 	padding: 0
 	margin: 0 auto
 	flex-wrap: wrap
@@ -148,11 +149,14 @@ header
 				display: -ms-flex
 				display: -o-flex
 				display: flex
-				align-items: space-between
+				align-items: center
+				justify-content: flex-start
 				flex-wrap: wrap
+				padding-left: 40px
 				li
 					margin: 10px 0
 					flex: 0 0 50%
+					text-align: left
 					&:nth-child(2n-1)
 						margin-left: auto
 					a
@@ -264,7 +268,121 @@ header
 			color: $deep-sky-blue
 			margin-right: 10px
 		.__icon-user
-			display: inline-block
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			position: relative
+			.__dropdown-menu
+				width: 200px
+				max-height: 
+				opacity: 0
+				position: absolute
+				top: 50px
+				left: -100px
+				right: 0
+				transition: 0.4s ease all
+				background-color: $white-two
+				box-shadow: 8px 20px 34px 0 rgba(48, 49, 51, 0.09)
+				border-radius: 8px
+				font-size: 16px
+				text-align: center
+				&.__open
+					max-height: 500px
+					opacity: 1
+				.__title
+					margin-top: 20px
+					margin-bottom: 18px
+					text-transform: uppercase
+					font-size: 17px
+					color: $gunmetal
+					font-family: $pt-bold
+					letter-spacing: 0.6px
+				.__title-sm
+					font-family: $pt-bold
+					font-size: 12px
+					color: $gunmetal
+					text-align: left
+					padding: 0 18px
+					letter-spacing: 0.4px
+				.__describe
+					font-family: $pt-reg
+					padding: 0 18px
+					font-size: 12px
+					text-align: left
+					letter-spacing: 0.4px
+					color: $gunmetal
+				.__city
+					font-size: 12px
+					padding: 0 18px
+					font-family: $pt-bold
+					letter-spacing: 0.4px
+					color: $gunmetal
+					text-align: left
+					span
+						display: block
+						font-family: $pt-reg
+				.__info
+					font-size: 12px
+					padding: 0 18px
+					font-family: $pt-bold
+					letter-spacing: 0.4px
+					color: $gunmetal
+					text-align: left
+					span
+						font-family: $pt-reg
+						padding-left: 3px
+						a
+							color: $gunmetal
+							text-decoration: none
+							&:hover
+								text-decoration: none
+				.__list
+					list-style-type: none
+					display: -webkit-flex
+					display: -moz-flex
+					display: -ms-flex
+					display: -o-flex
+					display: flex
+					padding: 0
+					width: 100%
+					text-align: center
+					font-size: 16px
+					flex-wrap: wrap
+					background-color: $white
+					transition: 0.4s ease all
+					border-radius: 8px
+					li
+						flex: 0 0 100%
+						margin: 10px auto
+						a
+							display: block
+							transition: 0.4s ease all
+							color: $gunmetal
+						&.__logout
+							position: relative
+							&:before
+								content: ''
+								position: absolute
+								top: -9px
+								left: 0
+								right: 0
+								height: 1px
+								width: auto
+								background-color: $gunmetal
+			.__btn
+				flex: 0 0 100%
+				max-width: 25px
+				outline: 0
+				background-color: transparent
+				border: none
+				cursor: pointer
+				svg
+					max-width: 100%
+					height: auto
+					display: block
+					fill: $cerise
 .header_info_login_sign-up,
 .header_info_login_sign-in
 	outline: 0
@@ -726,9 +844,9 @@ header
 		font-size: 16px
 		line-height: 1.69
 .home-about-us
-	padding-top: 174px
+	padding-top: 74px
 .home-about-us_content
-	margin-top: 92px
+	margin-top: 0px
 	>.__title
 		font-size: 53px
 		color: $dark-sea-green
@@ -739,13 +857,47 @@ header
 		line-height: 1.44
 		font-size: 16px
 		margin-bottom: 20px
-		max-width: 92%
+		max-width: 100%
+.home-about-us_feedback-form_btn
+	position: fixed
+	right: 30px
+	bottom: 30px
+	background-color: $white
+	border-radius: 1200px
+	z-index: 105
+	transition: 0.4s ease all
+	&.__open
+		right: 450px
+	.__btn
+		background-color: transparent
+		border: none
+		outline: 0
+		max-height: 70px
+		max-width: 70px
+		padding: 16px 15px 20px
+		transition: 0.5s ease all
+		display: block
+		svg
+			display: block
+			max-width: 100%
+			height: auto
+			fill: $cerise
 .home-about-us_feedback-form
 	border-radius: 8px
 	background-color: $white
 	border: solid 2px $deep-sky-blue
 	margin-left: 60px
 	padding: 76px 48px 68px
+	max-width: 500px
+	min-width: 400px
+	position: fixed
+	z-index: 106
+	bottom: 10vh
+	right: 0
+	transform: translate3d(100vw,0,0)
+	transition: 0.4s ease all
+	&.__open
+		transform: translate3d(0,0,0)
 	form
 		p
 			margin-bottom: 39px
@@ -1623,9 +1775,31 @@ footer
 .delivery-page_content_tabs_position_p-s
 	margin-top: 20px
 	margin-bottom: 0
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	align-items: center
 	.__content
 		font-size: 12px
 		color: $charcoal-grey
+		margin-right: auto
+		margin-bottom: 0
+	.__link
+		margin-left: auto
+		position: relative
+		z-index: 100
+		border-radius: 8px
+		padding-top: 18px
+		padding-bottom: 18px
+		padding-left: 25px
+		padding-right: 25px
+		color: $deep-sky-blue
+		font-family: $pt-bold
+		font-size: 22px
+		background-color: $white
+		transition: 0.4s ease all
 // DELIVERY PAGE ENDS
 // HOW BUY PAGE STARTS
 .how-buy-page-title
@@ -1699,17 +1873,52 @@ footer
 			white-space: nowrap
 			z-index: 1
 			margin-right: 40px
-		span.__line
-			height: 2px
-			width: 100%
-			background-color: $deep-sky-blue
-			margin-right: 5px
+	.__more
+		background-color: transparent
+		outline: 0
+		border: none
+		color: $deep-sky-blue
+		cursor: pointer
+		font-size: 14px
+		position: relative
+		z-index: 10
+		transition: 0.4s ease all
+		&.__hide
+			opacity: 0
+			max-height: 0
+			visibility: hidden
+	.__close
+		font-size: 14px
+		cursor: pointer
+		color: $deep-sky-blue
+		outline: 0
+		background-color: transparent
+		border: none
+		position: relative
+		z-index: 10
+		transition: 0.4s ease all
+		opacity: 0
+		visibility: hidden
+		&.__show
+			opacity: 1
+			visibility: visible
 	.__content
 		font-size: 14px
 		color: $gunmetal
 		line-height: 1.29
 		margin-top: 0
 		margin-bottom: 16px
+		max-height: 0
+		opacity: 0
+		transition: 0.4s ease all
+		position: relative
+		z-index: 10
+		&.__static
+			max-height: 500px
+			opacity: 1
+		&.__open
+			max-height: 500px
+			opacity: 1
 		&.__content-sm
 			max-width: 250px
 		&.__content-md
@@ -1719,20 +1928,10 @@ footer
 	&.second
 		flex: 0 0 38%
 		.__title
-			span.__line
-				position: absolute
-				left: 34px
-				top: 80px
-				z-index: -2
-				height: 280px
-				width: 2px
 	&.third
 		flex: 0 0 60%
 	&.fourth
 		flex: 0 0 38%
-		.__title
-			span.__line
-				display: none
 // HOW BUY PAGE ENDS
 // MARKET PAGE STARTS
 .market-page-title
@@ -2061,6 +2260,10 @@ footer
 				width: 4px
 				background-color: #eef3f4
 				transition: 0.4s ease all
+			&:after
+				content: ''
+				transition: 0.4s ease height
+				height: 0
 			&:hover
 				text-decoration: none
 				cursor: pointer
@@ -2478,28 +2681,31 @@ footer
 		z-index: 3
 		padding-right: 30px
 		padding-left: 30px
-		.__container-value
-			position: relative
-			padding: 50px 0 0
-			border: 8px solid $dark-sea-green
-			border-radius: 1000px
+		.circle-range-select-wrapper
+			padding: 0!important
 			width: 194px
 			height: 194px
+			border: 8px solid $dark-sea-green
+			text-align: center
+		.circle-range-select-wrapper .handle:before
+			background-color: $white
+			border: 2px solid $black
+			z-index: 10
+		.circle-range-select-wrapper .values
+			display: none
+		.__container-value
 			position: relative
-			z-index: -1
+			border-radius: 1000px
+			position: relative
+			z-index: 6
 			&.weight
 				margin-right: auto
-				margin-left: 50px
+				margin-left: 0px
 				padding-left: 20px
-				&:before
-					content: ''
-					position: absolute
-					left: -17px
-					top: 50%
-					transform: translateY(-50%)
-					width: 25px
-					height: 5px
-					background-color: $dark-sea-green
+				.__input-container
+					position: relative
+					right: -22px
+					top: -8px
 			.__title
 				font-size: 16px
 				color: $charcoal-grey
@@ -2508,8 +2714,9 @@ footer
 				margin-bottom: 0
 				position: absolute
 				left: -15px
-				top: 0
+				top: -10px
 			.__input-container
+				text-align: center
 				label
 					text-transform: uppercase
 					margin-bottom: 3px
@@ -2517,6 +2724,10 @@ footer
 					font-family: $pt-bold
 					color: #818594
 					letter-spacing: -0.2px
+					position: absolute
+					top: 50%
+					left: -20px
+					transform: translateY(-50%)
 				input
 					border: none
 					outline: 0
@@ -2526,19 +2737,21 @@ footer
 					letter-spacing: -0.2px
 					max-width: 100%
 					color: $charcoal-grey
+					display: block
+					margin: 0 auto
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translateY(-50%) translateX(-50%)
+					max-width: 150px
 			&.price
 				text-align: right
 				margin-right: 50px
 				padding-right: 20px
-				&:before
-					content: ''
-					position: absolute
-					right: -17px
-					top: 50%
-					transform: translateY(-50%)
-					width: 25px
-					height: 5px
-					background-color: $dark-sea-green
+				.__input-container
+					position: relative
+					left: -5px
+					top: -8px
 				.__title
 					left: auto
 					right: -15px
@@ -2555,10 +2768,15 @@ footer
 							-moz-appearance: none
 							appearance: none
 							margin: 0
+					label
+						left: auto
+						right: -10px
+						top: 50%
 		.container-info_bgi
 			position: absolute
 			top: 0
 			left: 50%
+			z-index: 7
 			max-width: 194px
 			max-height: 194px
 			transform: translateX(-50%)

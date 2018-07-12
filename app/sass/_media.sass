@@ -9,7 +9,7 @@
 	.home-reviews_position
 		padding-right: 30px
 	.header_info_time_cities .__city
-		margin-right: 10px
+		margin-right: 7px
 	.header_info_time_times .__time
 		word-spacing: 5px
 	.header_info_login.login .__balance
@@ -101,13 +101,15 @@
 		font-size: 11px
 	.calculator-page-content_container
 		padding-bottom: 221px
+	.header_info_login_sign-up, .header_info_login_sign-in
+		padding: 7px 5px
 @media screen and (max-width: 1270px) and (min-width: 1200px)
 	.home-short-info_describe
 		padding-left: 50px
 @media screen and (max-width: 1070px) and (min-width: 992px)
 	.home-short-info_describe
 		padding-left: 50px
-@media screen and (min-width: 769px) and (max-width: 992px)
+@media screen and (min-width: 768px) and (max-width: 992px)
 	.header_info_calculator
 		margin-right: 10px
 	.header_info_time_img
@@ -419,8 +421,23 @@
 				&:focus
 					outline: 0
 	.header_info_menu-mobile
-		display: block
+		display: inline-block
+		vertical-align: top
+		float: right
+	.header_info_login.login .__icon-user
+		max-width: 70px
 	.header_info
+		display: inline-block
+		vertical-align: top
+	.header_info_menu_main
+		display: none
+	.header_info_calculator
+		display: none
+	.header_info_time
+		display: none
+	.header_info_lang
+		display: none
+	.header_info_login.login .__balance
 		display: none
 	.home-short-info_menu_btn
 		display: none
@@ -522,6 +539,9 @@
 		padding-top: 36px
 		padding-left: 10px
 		padding-right: 10px
+		transform: translate3d(150vw,0,0)
+		max-width: 350px
+		min-width: 300px
 	.home-about-us_feedback-form form p button
 		display: block
 		width: 100%
@@ -579,7 +599,7 @@
 	.home-articles
 		padding-bottom: 100px
 	.home-reviews
-		margin-bottom: 50px
+		margin-bottom: 200px
 	.home-reviews_position
 		padding: 15px
 		margin-bottom: 40px

@@ -1,5 +1,28 @@
 // ANIMATIONS
 jQuery(document).ready(function() {
+	jQuery('.calculator-page-content_calculator-main .__container-info .__container-value.price .__input-container input').lcnCircleRangeSelect();
+	jQuery('.calculator-page-content_calculator-main .__container-info .__container-value.weight .__input-container input').lcnCircleRangeSelect();
+	$('.home-about-us_feedback-form_btn .__btn').click(function() {
+		$('.home-about-us_feedback-form').toggleClass('__open');
+		$('.home-about-us_feedback-form_btn').toggleClass('__open')
+	});
+	$('.wrapper').click(function() {
+		$('.home-about-us_feedback-form').removeClass('__open');
+		$('.home-about-us_feedback-form_btn').removeClass('__open');
+	});
+	$('.header_info_login.login .__icon-user .__btn').click(function() {
+		$('.header_info_login.login .__icon-user .__dropdown-menu').toggleClass('__open')
+	});
+	$('.how-buy-page_content_position .__more').click(function() {
+		$($(this)).parent().find('.__content').toggleClass('__open');
+		$($(this)).toggleClass('__hide')
+		$($(this)).parent().find('.__close').toggleClass('__show');
+	});
+	$('.how-buy-page_content_position .__close').click(function() {
+		$($(this)).parent().find('.__content').toggleClass('__open');
+		$($(this)).toggleClass('__show')
+		$($(this)).parent().find('.__more').toggleClass('__hide');
+	});
 	var home_short_btn = $(".home-short-info_describe_steps_container_position_content .__link");
 	home_short_btn.click(function() {
 		$(this).siblings(".__content").toggleClass('show')
@@ -16,13 +39,11 @@ jQuery(document).ready(function() {
 		$('.home-short-info_menu_list_container').removeClass('__open');
 		$('body').removeClass('o-hidden')
 	});
-	if ($(window).width() < 768) {
 		$('.home-short-info_menu_btn-button').click(function() {
 			// return false;
 			$('.home-short-info_menu_list_container').addClass('__open');
 			$('body').addClass('o-hidden');
 		});
-	};
 	$('.faq-page-main_sidebar_sm_btn').click(function() {
 		$('.faq-page-main_sidebar').toggleClass('__open');
 		$($(this)).toggleClass('__open')
@@ -147,9 +168,36 @@ $(document).ready(function () {
 			return this.value;
 		}).get();
 	$('#city').autocomplete({ source: availableTags });
-	$('input.__input-range, .calculator-page-content_calculator-main .__container-info .__container-value .__input-container input').on('input change keyup', function() {
+	var valueInputWeight = $('.calculator-page-content_calculator-main .__container-info .__container-value.weight .__input-container input'),
+		  valueInputPrice = ('.calculator-page-content_calculator-main .__container-info .__container-value.price .__input-container input');
+	// valueInputWeight.on('input change keyup', function() {
+	// 	var input = '.calculator-page-content_calculator-main .__container-info .__container-value.weight .__input-container input + .values .value1',
+	// 			valueInputW = $('.calculator-page-content_calculator-main .__container-info .__container-value.weight .values .value1').html(),
+	// 			UspsExMoreHeightW = 144 + (valueInputW * 2),
+	// 			UspsPrMoreHeightW = 68 + (valueInputW * 2),
+	// 			BxbryMoreHeightW = 94 + (valueInputW * 2),
+	// 			BxbryDeMoreHeightW = 144 + (valueInputW * 2),
+	// 			UspsExLowHeightW = 244 + (-valueInputW * 2),
+	// 			UspsPrLowHeightW = 168 + (-valueInputW * 2),
+	// 			BxbryLowHeightW = 194 + (-valueInputW * 2),
+	// 			BxbryDeLowHeightW = 214 + (-valueInputW * 2);
+	// 	if (valueInputW > 0 && valueInputW < 25) {
+	// 		$('.__usps-express .__line').css({'height': UspsExMoreHeightW});
+	// 		$('.__boxberry .__line').css({'height': BxbryMoreHeightW});
+	// 		$('.__usps-priority .__line').css({'height': UspsPrLowHeightW});
+	// 		$('.__boxberry-delivery .__line').css({'height': UspsExLowHeightW});
+	// 	}
+	// 	else {
+	// 		$('.__usps-express .__line').css({'height': UspsExLowHeightW});
+	// 		$('.__boxberry .__line').css({'height': BxbryLowHeightW});
+	// 		$('.__usps-priority .__line').css({'height': UspsPrMoreHeightW});
+	// 		$('.__boxberry-delivery .__line').css({'height': BxbryDeMoreHeightW});
+	// 	};
+	// });
+	var inputs = 'input.__input-range, .calculator-page-content_calculator-main .__container-info .__container-value .__input-container input, .calculator-page-content_calculator-main .__container-info .__container-value.weight .__input-container input';
+	$(inputs).on('input change keyup', function() {
 		var input = 'input.__input-range + .setyear',
-				valueInput = $('input.__input-range').val(),
+				valueInput = +$('input.__input-range').val(),
 				UspsExMoreHeight = 144 + (valueInput * 2),
 				UspsPrMoreHeight = 68 + (valueInput * 2),
 				BxbryMoreHeight = 94 + (valueInput * 2),
@@ -157,19 +205,38 @@ $(document).ready(function () {
 				UspsExLowHeight = 244 + (-valueInput * 2),
 				UspsPrLowHeight = 168 + (-valueInput * 2),
 				BxbryLowHeight = 194 + (-valueInput * 2),
-				BxbryDeLowHeight = 214 + (-valueInput * 2);
-		if (valueInput > 0 && valueInput < 25) {
+				BxbryDeLowHeight = 214 + (-valueInput * 2),
+				valueInputW = +$('.calculator-page-content_calculator-main .__container-info .__container-value.weight .values .value1').html(),
+				UspsExMoreHeightW = 144 + (valueInputW * 2),
+				UspsPrMoreHeightW = 68 + (valueInputW * 2),
+				BxbryMoreHeightW = 94 + (valueInputW * 2),
+				BxbryDeMoreHeightW = 144 + (valueInputW * 2),
+				UspsExLowHeightW = 244 + (-valueInputW * 2),
+				UspsPrLowHeightW = 168 + (-valueInputW * 2),
+				BxbryLowHeightW = 194 + (-valueInputW * 2),
+				BxbryDeLowHeightW = 214 + (-valueInputW * 2);
+
+		if ((valueInput > 0 && valueInput < 25) || (valueInputW > 0 && valueInputW < 25)) {
 			$('.__usps-express .__line').css({'height': UspsExMoreHeight});
 			$('.__boxberry .__line').css({'height': BxbryMoreHeight});
 			$('.__usps-priority .__line').css({'height': UspsPrLowHeight});
 			$('.__boxberry-delivery .__line').css({'height': UspsExLowHeight});
+			$('.__usps-express .__line').css({'height': UspsExMoreHeightW});
+			$('.__boxberry .__line').css({'height': BxbryMoreHeightW});
+			$('.__usps-priority .__line').css({'height': UspsPrLowHeightW});
+			$('.__boxberry-delivery .__line').css({'height': UspsExLowHeightW});
 		}
-		else if (valueInput > 25 && valueInput < 50) {
+		
+		if ((valueInput >= 25 && valueInput <= 50) || (valueInputW >= 25 && valueInputW <= 50)) {
 			$('.__usps-express .__line').css({'height': UspsExLowHeight});
 			$('.__boxberry .__line').css({'height': BxbryLowHeight});
 			$('.__usps-priority .__line').css({'height': UspsPrMoreHeight});
 			$('.__boxberry-delivery .__line').css({'height': BxbryDeMoreHeight});
-		};
+			$('.__usps-express .__line').css({'height': UspsExLowHeightW});
+			$('.__boxberry .__line').css({'height': BxbryLowHeightW});
+			$('.__usps-priority .__line').css({'height': UspsPrMoreHeightW});
+			$('.__boxberry-delivery .__line').css({'height': BxbryDeMoreHeightW});
+		}console.log(UspsExMoreHeight, BxbryMoreHeight, UspsPrLowHeight, UspsExLowHeight);;
 		var Range = 'input.__input-range', // Кол-во
 			Height = '.calculator-page-content_calculator-main .__container-info .__container-value.weight .__input-container input', //Вес
 			Price = '.calculator-page-content_calculator-main .__container-info .__container-value.price .__input-container input', // Общая цена
