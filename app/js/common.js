@@ -1,7 +1,32 @@
 // ANIMATIONS
 jQuery(document).ready(function() {
-	jQuery('.calculator-page-content_calculator-main .__container-info .__container-value.price .__input-container input').lcnCircleRangeSelect();
-	jQuery('.calculator-page-content_calculator-main .__container-info .__container-value.weight .__input-container input').lcnCircleRangeSelect();
+	if ($(window).width() > 768 ) {
+		jQuery('.calculator-page-content_calculator-main .__container-info .__container-value.price .__input-container input').lcnCircleRangeSelect();
+		jQuery('.calculator-page-content_calculator-main .__container-info .__container-value.weight .__input-container input').lcnCircleRangeSelect();
+	};
+	if ($(window).width() < 769 ) {
+		jQuery('.calculator-page-content_calculator-main .__container-info .__container-value.weight .__input-container input').attr({
+			type: 'range',
+			id: 'date1',
+			min: '1',
+			max: '50',
+			step: '1',
+			value: '1',
+			name: 'date',
+			class: '__input-range'
+		}).parent().append('<span class="setyear">1</span>');
+		jQuery('.calculator-page-content_calculator-main .__container-info .__container-value.price .__input-container input').attr({
+			type: 'range',
+			id: 'date1',
+			min: '1',
+			max: '500',
+			step: '1',
+			value: '1',
+			name: 'date',
+			class: '__input-range'
+		}).parent().append('<span class="setyear">1</span>');
+		jQuery('.calculator-page-content_calculator-main .__container-info .__container-value').addClass('slider')
+	}
 	$('.home-about-us_feedback-form_btn .__btn').click(function() {
 		$('.home-about-us_feedback-form').toggleClass('__open');
 		$('.home-about-us_feedback-form_btn').toggleClass('__open')
@@ -215,28 +240,29 @@ $(document).ready(function () {
 				UspsPrLowHeightW = 168 + (-valueInputW * 2),
 				BxbryLowHeightW = 194 + (-valueInputW * 2),
 				BxbryDeLowHeightW = 214 + (-valueInputW * 2);
+				valueInputP = +$('.calculator-page-content_calculator-main .__container-info .__container-value.price .values .value1').html(),
+				UspsExMoreHeightP = 144 + (valueInputP * 2),
+				UspsPrMoreHeightP = 68 + (valueInputP * 2),
+				BxbryMoreHeightP = 94 + (valueInputP * 2),
+				BxbryDeMoreHeightP = 144 + (valueInputP * 2),
+				UspsExLowHeightP = 244 + (-valueInputP * 2),
+				UspsPrLowHeightP = 168 + (-valueInputP * 2),
+				BxbryLowHeightP = 194 + (-valueInputP * 2),
+				BxbryDeLowHeightP = 214 + (-valueInputP * 2);
 
-		if ((valueInput > 0 && valueInput < 25) || (valueInputW > 0 && valueInputW < 25)) {
-			$('.__usps-express .__line').css({'height': UspsExMoreHeight});
-			$('.__boxberry .__line').css({'height': BxbryMoreHeight});
-			$('.__usps-priority .__line').css({'height': UspsPrLowHeight});
-			$('.__boxberry-delivery .__line').css({'height': UspsExLowHeight});
-			$('.__usps-express .__line').css({'height': UspsExMoreHeightW});
-			$('.__boxberry .__line').css({'height': BxbryMoreHeightW});
-			$('.__usps-priority .__line').css({'height': UspsPrLowHeightW});
-			$('.__boxberry-delivery .__line').css({'height': UspsExLowHeightW});
+		if ((valueInput > 0 && valueInput < 25) || (valueInputW > 0 && valueInputW < 25) || (valueInputP > 0 && valueInputP < 280)) {
+			$('.__usps-express .__line').css({'height': ((UspsExMoreHeight + UspsExMoreHeightW + (UspsExMoreHeightP / 20)) / 3)});
+			$('.__boxberry .__line').css({'height': ((BxbryMoreHeight + BxbryMoreHeightW + (BxbryMoreHeightP / 20)) /3 )});
+			$('.__usps-priority .__line').css({'height': ((UspsPrLowHeight + UspsPrLowHeightW + (UspsPrLowHeightP / 20 )) /3 - 30)});
+			$('.__boxberry-delivery .__line').css({'height': ((BxbryDeLowHeight + BxbryDeLowHeightW + (BxbryDeLowHeightP / 20 )) /3 - 10)});
 		}
-		
-		if ((valueInput >= 25 && valueInput <= 50) || (valueInputW >= 25 && valueInputW <= 50)) {
-			$('.__usps-express .__line').css({'height': UspsExLowHeight});
-			$('.__boxberry .__line').css({'height': BxbryLowHeight});
-			$('.__usps-priority .__line').css({'height': UspsPrMoreHeight});
-			$('.__boxberry-delivery .__line').css({'height': BxbryDeMoreHeight});
-			$('.__usps-express .__line').css({'height': UspsExLowHeightW});
-			$('.__boxberry .__line').css({'height': BxbryLowHeightW});
-			$('.__usps-priority .__line').css({'height': UspsPrMoreHeightW});
-			$('.__boxberry-delivery .__line').css({'height': BxbryDeMoreHeightW});
-		}console.log(UspsExMoreHeight, BxbryMoreHeight, UspsPrLowHeight, UspsExLowHeight);;
+		if ((valueInput >= 25 && valueInput <= 50) || (valueInputW >= 25 && valueInputW <= 50) || (valueInputP > 280 && valueInputP < 560)) {
+			$('.__usps-express .__line').css({'height': ((UspsExLowHeight + UspsExLowHeightW + (UspsExLowHeightP / 20 )) /3 - 30)});
+			$('.__boxberry .__line').css({'height': ((BxbryLowHeight + BxbryLowHeightW + (BxbryLowHeightP / 20 )) /3 - 30)});
+			$('.__usps-priority .__line').css({'height': ((UspsPrMoreHeight + UspsPrMoreHeightW + (UspsPrMoreHeightP / 20)) /3 )});
+			$('.__boxberry-delivery .__line').css({'height': ((BxbryDeMoreHeight + BxbryDeMoreHeightW + (BxbryDeMoreHeightP / 20)) /3 )});
+			console.log('fuck');
+		};
 		var Range = 'input.__input-range', // Кол-во
 			Height = '.calculator-page-content_calculator-main .__container-info .__container-value.weight .__input-container input', //Вес
 			Price = '.calculator-page-content_calculator-main .__container-info .__container-value.price .__input-container input', // Общая цена
@@ -253,10 +279,10 @@ $(document).ready(function () {
 			BoxBerry = $('.calculator-page-content_calculator-main .__container-price .__boxberry .__title .__price span'),
 			// BoxBerry Courier
 			BoxBerryCourier = $('.calculator-page-content_calculator-main .__container-price .__boxberry-delivery .__title .__price span');
-		UspsExpress.text((fullDeliveryPrice * 1.343243).toFixed(2));
-		UspsPriority.text((fullDeliveryPrice * 2.7).toFixed(2));
-		BoxBerry.text((fullDeliveryPrice * 1.1).toFixed(2));
-		BoxBerryCourier.text((fullDeliveryPrice * 0.5).toFixed(2));
+			UspsExpress.text((fullDeliveryPrice * 1.343243).toFixed(2));
+			UspsPriority.text((fullDeliveryPrice * 2.7).toFixed(2));
+			BoxBerry.text((fullDeliveryPrice * 1.1).toFixed(2));
+			BoxBerryCourier.text((fullDeliveryPrice * 0.5).toFixed(2));
 	});
 		
 });
@@ -267,7 +293,7 @@ $.fn.WBslider = function() {
 			$_title = $('.setyear', $_this),
 			thumbwidth = 50,
 			yrnow = '50';
-		$_date.attr('max', yrnow);
+		$_date.attr('max');
 		$('.endyear', $_this).text( yrnow );
 		$_date.val(yrnow - 50);
 

@@ -916,6 +916,17 @@
 	.calculator-page-content_calculator-main .__container-info
 		flex-wrap: wrap
 		justify-content: center
+		padding-left: 0
+		padding-right: 0
+	.calculator-page-content_calculator-main .__info
+		position: static
+		text-align: center
+		display: block
+		margin-bottom: 15px
+		font-size: 16px
+		letter-spacing: -0.2px
+	.setyear
+		top: 0
 	.calculator-page-content_calculator-main .__container-info .__container-value
 		&.weight,
 		&.price
@@ -926,8 +937,59 @@
 			text-align: center
 			padding-right: 0
 			margin-bottom: 20px
+			max-width: 100%
+			flex: 0 0 100%
 			&:before
 				content: none
+			input[type="range"]::-moz-range-progress
+				background-color: #43e5f7
+			input[type='range']
+				width: 520px
+				-webkit-appearance: none
+				background-color: $dark-sea-green
+			input[type='range']::-webkit-slider-runnable-track
+				height: 16px
+				-webkit-appearance: none
+				color: #13bba4
+				overflow: visible
+			input[type='range']::-webkit-slider-thumb
+				width: 31px
+				-webkit-appearance: none
+				z-index: 2
+				position: relative
+				top: -8px
+				border-radius: 150px
+				border: 3px solid $charcoal-grey
+				height: 31px
+				cursor: pointer
+				background: $white
+			input[type="range"]::-moz-range-progress
+				background-color: #43e5f7
+			input[type="range"]::-moz-range-track
+				background-color: #9a905d
+			input[type="range"]::-ms-fill-lower
+				background-color: #43e5f7
+			input[type="range"]::-ms-fill-upper
+				background-color: #9a905d
+			.__input-container
+				position: static
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				flex-wrap: wrap
+				justify-content: center
+				align-items: center
+				label
+					position: static
+					flex: 0 0 100%
+				.__input-range
+					width: 100%
+					flex: 0 0 100%
+					position: static
+					transform: none
+					max-width: 100%
 	.calculator-page-content_container
 		padding-bottom: 50px
 	.calculator-page-content_foot-bgi
@@ -942,7 +1004,7 @@
 	.calculator-page-content_calculator-main .__container-price
 		flex-wrap: wrap
 		align-items: center
-		justify-content: center
+		justify-content: flex-start
 		>div
 			flex: 0 0 50%
 			margin-top: 0 !important
@@ -980,6 +1042,11 @@
 		flex: 0 0 100%
 	.calculator-page-content_calculator-main .__container-price .__boxberry-delivery .__title
 		margin-left: 15px
+		flex-wrap: wrap
+		.__price
+			flex: 0 0 100%
+	.calculator-page-content_calculator-main .__container-price .__boxberry
+		justify-content: flex-start
 	.calculator-page-content_calculator-main .__container-price .__boxberry-delivery
 		margin-left: 0
 	.calculator-page-content_main-bgi
