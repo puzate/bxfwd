@@ -45,12 +45,11 @@ header
 .header_logo
 	padding-top: 5px
 .header_info_menu_main
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
-	display: flex
 	text-align: left
+	margin-top: 15px
+	padding-bottom: 5px
+	padding-top: 20px
+	border-top: 3px solid $cerise
 .header_info_menu_main_list
 	text-align: left
 	display: -webkit-flex
@@ -58,17 +57,19 @@ header
 	display: -ms-flex
 	display: -o-flex
 	display: flex
-	align-items: flex-start
-	justify-content: flex-start
+	align-items: center
+	justify-content: space-between
 	padding: 0
 	margin: 0 auto
 	flex-wrap: wrap
-	max-width: 260px
-	min-width: 260px
 	list-style-type: none
+	padding-right: 20px
+	padding-left: 20px
 	li
 		text-align: left
-		margin: 0 8px
+		margin: 0 11px
+		&:last-child
+			margin-left: auto
 		// &:first-child
 		// 	margin-left: 0
 		// &:last-child
@@ -76,7 +77,7 @@ header
 		a
 			display: block
 			text-transform: uppercase
-			font-size: 12px
+			font-size: 14px
 			color: $gunmetal
 			letter-spacing: 0px
 			font-family: $pt-bold
@@ -87,6 +88,8 @@ header
 	margin: 0 auto
 .home-short-info-main
 	position: static
+	margin-right: auto
+	margin-left: 15px
 .home-short-info_menu_btn
 	position: relative
 	z-index: 2
@@ -177,6 +180,7 @@ header
 .header_info_time,
 .header_info_login,
 .header_info_lang
+	margin-right: 25px
 	text-align: left
 	display: inline-block
 	vertical-align: middle
@@ -194,11 +198,12 @@ header
 		color: $cerise
 		letter-spacing: 0.4px
 		white-space: wrap
-		max-width: 50px
+		max-width: 80px
 		flex: 0 0 50px
 		line-height: 1.33
 		font-size: 12px
 		padding-left: 5px
+		text-transform: uppercase
 	&:hover
 		text-decoration: none
 .header_info_time_img
@@ -384,6 +389,9 @@ header
 				background-color: transparent
 				border: none
 				cursor: pointer
+				transition: 0.4s ease all
+				&.__open
+					transform: rotate(180deg)
 				svg
 					max-width: 100%
 					height: auto
@@ -2154,46 +2162,65 @@ footer
 				color: $white
 // MARKET PAGE ENDS
 // FAQ PAGE STARTS
-.faq-page-main
-	margin-top: 50px
-	margin-bottom: 100px
-.faq-page-main_sidebar
-	padding-top: 30px
-.faq-page-main_sidebar_list
-	list-style-type: none
-	margin: 0
-	padding: 0
-	li
-		padding: 7px 0
-		a
+.faq-page-main_sidebar_btn
+	display: none
+	position: fixed
+	top: 50%
+	left: 20px
+	transform: translateY(-50%)
+	z-index: 20
+	.__btn
+		background-color: transparent
+		outline: 0
+		border: none
+		position: relative
+		width: 25px
+		cursor: pointer
+		padding: 0
+		height: 30px
+		transition: 0.4s ease all
+		transform: translateX(0)
+		.__line
 			display: block
-			line-height: 1.5
-			letter-spacing: -0.1px
-			font-size: 14px
-			font-family: $pt-bold
-			color: $charcoal-grey
+			background-color: $cerise
 			transition: 0.4s ease all
-			&:visited
-				color: $gunmetal
-		&.active
-			a
-				color: $cerise
-.faq-page-main_tabs_positions_tabs
-	position: relative
-.faq-page-main_tabs_position_content
-	padding-left: 30px
-	padding-right: 30px
-	transition: 0.4s ease all
-	transform: translate3d(0,100vw,0)
-	position: absolute
-	top: 0
-	left: 0
-	opacity: 0
-	&.active
-		transform: none
-		opacity: 1
-		position: static
-.faq-page-main_tabs_position_content_title
+			&:first-child
+				position: absolute
+				top: 9px
+				right: 0
+				text-align: right
+				display: inline-block
+				transform: rotate(35deg)
+				height: 1px
+				width: 15px
+			&:nth-child(2)
+				width: 100%
+				height: 1px
+			&:last-child
+				position: absolute
+				bottom: 10px
+				right: 0
+				text-align: right
+				display: inline-block
+				transform: rotate(-35deg)
+				height: 1px
+				width: 15px
+		&.__open
+			transform: translateX(280px)
+			.__line
+				&:first-child
+					transform: rotate(-35deg)
+					right: auto
+					left: 0
+				&:last-child
+					transform: rotate(35deg)
+					right: auto
+					left: 0
+.faq-page-main
+	padding-top: 50px
+	padding-bottom: 100px
+.faq-page-main_content
+.faq-page-main_content_title
 	margin-bottom: 38px
 	.__title
 		line-height: 1.38
@@ -2207,7 +2234,7 @@ footer
 		font-size: 14px
 		font-family: $pt-reg
 		letter-spacing: -0.1px
-.faq-page-main_tabs_position_content_main
+.faq-page-main_content_main
 	.__title-main
 		letter-spacing: -0.2px
 		margin-top: 0
@@ -2238,52 +2265,84 @@ footer
 			letter-spacing: -0.1px
 			font-family: $pt-reg
 			margin-bottom: 15px
-.faq-page-main_tabs_position_tabs
-	.__title
-		text-transform: uppercase
-		color: $cerise
-		font-size: 16px
-		font-family: $pt-bold
-		margin-bottom: 14px
+.faq-page-main_sidebar
+	margin-top: 50px
 	.__list
-		margin: 0
 		list-style-type: none
-		padding-left: 25px
+		margin: 0
+		position: relative
+		padding-left: 20px
+		margin-left: 15px
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: -5px
+			bottom: -5px
+			left: 0
+			width: 6px
+			background-color: #e6e7ec
 		li
-			color: #646773
-			line-height: 1.43
-			letter-spacing: -0.1px
 			font-size: 14px
-			padding-bottom: 7px
-			padding-top: 7px
+			letter-spacing: -0.1px
+			color: $gunmetal
+			line-height: 1.21
+			font-family: $pt-bold
+			margin: 15px 0
+			cursor: pointer
 			position: relative
+			transition: 0.4s ease all
 			&:before
 				content: ''
 				position: absolute
 				top: 0
 				left: -20px
-				bottom: 0
-				width: 4px
-				background-color: #eef3f4
-				transition: 0.4s ease all
-			&:after
-				content: ''
-				transition: 0.4s ease height
+				display: block
+				background-color: $cerise
 				height: 0
-			&:hover
-				text-decoration: none
-				cursor: pointer
+				width: 6px
+				transition: 0.4s ease all
 			&.active
 				color: $cerise
-				&:after
-					content: ''
-					position: absolute
-					width: 10px
-					height: 24px
-					top: 50%
-					left: -23px
-					transform: translateY(-50%)
-					background-color: $cerise
+				&:before
+					height: 18px
+				.__sub-list
+					max-height: 1000px
+					opacity: 1
+					li
+						max-height: 100px
+						opacity: 1
+						margin: 10px 0
+						a
+							max-height: 100px
+							opacity: 1
+			.__sub-list
+				list-style-type: none
+				margin: 0
+				padding-left: 15px
+				transition: 0.4s ease all
+				max-height: 0
+				opacity: 0
+				li
+					transition: 0.4s ease all
+					max-height: 0
+					opacity: 0
+					margin: 0
+					&:before
+						content: none
+					a
+						font-size: 12px
+						color: #646773
+						line-height: 1.41
+						letter-spacing: -0.1px
+						transition: 0.4s ease all
+						max-height: 0
+						opacity: 0
+					&.active
+						a
+							color: $cerise
+							text-decoration: underline
+						
 // FAQ PAGE ENDS
 .faq-page-main_sidebar_sm_btn
 	display: none
@@ -2323,548 +2382,370 @@ footer
 		max-width: 1200px
 		margin: 0 auto
 .calculator-page-content
-	margin-top: 30px
+	background-color: #e3f1f5
 	position: relative
-	padding-top: 110px
-.calculator-page-content_main-bgi
+	background-image: url(../img/air.png)
+	background-repeat: no-repeat
+	background-size: 50%
+	background-position: right 100px	
+.calculator-page-content_foot-bgi
 	position: absolute
-	top: 0
 	bottom: 0
 	left: 0
 	right: 0
-	z-index: -1
-.calculator-page-content_foot-bgi
-	height: 320px
-	margin-top: -360px
-	z-index: 2
-	svg
-		fill: none
+	background-image: url(../img/town.svg)
+	background-repeat: repeat-x
+	background-size: cover
+	height: 300px
+	z-index: 1
 .calculator-page-content_container
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
 	max-width: 1200px
-	padding-bottom: 200px
 	margin: 0 auto
+	justify-content: space-between
+.calculator-page-content_girl-bgi
+	flex: 0 0 27%
+	padding-top: 100px
+	margin-right: 40px
+.calculator-page-content_main
+	flex: 0 0 50%
+	max-width: 440px
+	margin: 0 auto
+.calculator-page-content_main_country
+	margin-bottom: 36px
+	.__input-country
+		width: 100%
+		height: 42px
+		border: 4px solid $dark-sea-green
+		padding-left: 16px
+		padding-right: 16px
+		font-size: 22px
+		letter-spacing: -0.1px
+		color: $charcoal-grey
+		font-family: $pt-bold
+		-moz-appearance: none
+		-webkit-appearance: none
+		transition: 0.4s ease all
+		line-height: 1
+		&:focus
+			border-width: 2px
+			outline: 0
+		option
+			font-size: 16px
+.calculator-page-content_main_city
+	margin-bottom: 36px
+	.__input-city
+		width: 100%
+		height: 42px
+		border: 4px solid $dark-sea-green
+		padding-left: 16px
+		padding-right: 16px
+		font-size: 22px
+		letter-spacing: -0.1px
+		color: $charcoal-grey
+		font-family: $pt-bold
+		-moz-appearance: none
+		-webkit-appearance: none
+		line-height: 1
+		transition: 0.4s ease all
+		&:focus
+			border-width: 2px
+			outline: 0
+.__data-list_input
+	list-style-type: none
+	margin: 0
+	padding: 0
+	li
+		cursor: pointer
+		padding: 10px 0 10px 5px
+		font-size: 16px
+.calculator-page-content_main_range
+	position: relative
+	margin-bottom: 70px
+	.__title
+		letter-spacing: -0.2px
+		font-size: 16px
+		color: #646773
+		font-family: $pt-bold
+	.setyear
+		position: absolute
+		bottom: -65px
+		background-color: $black
+		width: 38px
+		height: 38px
+		line-height: 38px
+		text-align: center
+		color: $white
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: -6px
+			left: 50%
+			transform: translateX(-50%)
+			border-style: solid
+			border-width: 0 8px 6px 8px
+			border-color: transparent transparent #000000 transparent
+	.__input-range
+		display: block
+		-webkit-appearance: none
+		margin: 18px 0;
+		width: 100%
+		&::-webkit-slider-thumb
+			background-color: $white
+			height: 30px
+			width: 30px
+			border: 3px solid $black
+			border-radius: 50%
+			-webkit-appearance: none
+			box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+			cursor: pointer;
+			-webkit-appearance: none;
+			margin-top: -7px;
+		&::-webkit-slider-runnable-track
+			width: 100%
+			height: 16px
+			cursor: pointer
+			display: block
+			width: 100%;
+		&:focus 
+			outline: none
+.calculator-page-content_main_insurance-checkbox
+	padding-top: 30px
+	text-align: right
+	margin-bottom: 36px
+	.__title
+		font-size: 16px
+		letter-spacing: -0.2px
+		color: $charcoal-grey
+		cursor: pointer
+		span
+			display: inline-block
+			margin-right: 10px
+			background-color: $gunmetal
+			width: 16px
+			height: 16px
+			line-height: 16px
+			text-align: center
+			color: $white
+			font-size: 14px
+			transition: 0.4s ease all
+			border-radius: 2px
+	.__input-checkbox
+		display: none
+		&:checked
+			&+.__title
+				span
+					background-color: $dark-sea-green
+.calculator-page-content_main_prices-inputs
 	display: -webkit-flex
 	display: -moz-flex
 	display: -ms-flex
 	display: -o-flex
 	display: flex
 	align-items: flex-start
-	justify-content: space-between
-.calculator-page-content_dropdowns-select
-	margin-right: auto
-	.__select-container
-		margin-bottom: 25px
-		select, input, option, datalist
-			min-width: 272px
-			height: 48px
-			background-color: $white
-			box-shadow: 0 2px 4px 0 #a1a4b4
-			border: 3px solid $dark-sea-green
-			outline: 0
-			padding: 14px 14px 14px 9px
-			color: $charcoal-grey
-			font-size: 12px
-			letter-spacing: -0.1px
+	margin-bottom: 40px
+	padding-top: 20px
+	position: relative
+.calculator-page-content_main_prices-inputs_bgi
+	position: absolute
+	top: -0
+	left: 50%
+	transform: translateX(-50%)
+	max-width: 138px
+	display: block
+	height: auto
+.calculator-page-content_main_prices-inputs_sum
+	flex: 0 0 50%
+	border: 2px solid #c6c9d7
+	transition: 0.5s ease all
+	border-radius: 4px
+	padding: 16px
+	max-width: 50%
+	&.active
+		border-color: $dark-sea-green
+	.__title
+		margin-bottom: 14px
+		font-size: 14px
+		letter-spacing: -0.1px
+		color: #818594
+		font-family: $pt-bold
+	.__input
+		line-height: 40px
+		font-size: 34px
+		letter-spacing: -0.1px
+		background-color: transparent
+		color: $charcoal-grey
+		font-family: $pt-bold
+		border: none
+		outline: 0
+		display: block
+		max-width: 100%
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button
 			-webkit-appearance: none
 			-moz-appearance: none
-			text-indent: 1px
-			text-overflow: ''
-			&:hover
-				-webkit-appearance: none
-				-moz-appearance: none
-				text-indent: 1px
-				text-overflow: ''
-			&:focus
-				-webkit-appearance: none
-				-moz-appearance: none
-				text-indent: 1px
-				text-overflow: ''
-#ui-id-1
-	display: none!important
-.calculator-page-content_calculator-main
-	position: relative
-	z-index: 3
-	margin-left: 50px
-	margin-right: 40px
-	max-width: 550px
-	min-height: 750px
-	.__container-range
-		display: block
-		margin: 0 auto
-		max-width: 520px
-		padding-top: 40px
-		position: relative
-	.__container-price
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		.__usps-express
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
-			margin-top: 40px
-			position: relative
-			min-width: 140px
-			.__main
-				text-align: center
-				.__svg
-					display: block
-					svg
-						width: 20px
-						height: 39px
-						fill: $black
-				.__circle
-					width: 18px
-					height: 18px
-					background-color: $charcoal-grey
-					border-radius: 50px
-					display: block
-					margin: -2px auto 0
-				.__line
-					height: 144px
-					width: 3px
-					background-color: $charcoal-grey
-					display: inline-block
-					text-align: center
-					margin-left: 2px
-				.__name
-					margin-top: -5px
-					display: block
-					font-size: 20px
-					color: $charcoal-grey
-					font-family: $pt-bold
-					height: 84px
-					width: 84px
-					background-color: $white
-					border: 6px solid $charcoal-grey
-					border-radius: 500px
-					line-height: 71px
-					text-transform: uppercase
-					letter-spacing: -0.2px
-			.__title
-				position: absolute
-				top: 10px
-				right: -29px
-				width: 110px
-				.__price
-					display: block
-					letter-spacing: -0.3px
-					color: #818594
-					font-size: 25px
-					font-family: $pt-bold
-					opacity: 0.6
-					span
-						font-size: 34px
-						color: $cerise
-				.__delivery
-					margin-top: 4px
-					display: block
-					text-decoration: underline
-					font-size: 21px
-					color: $charcoal-grey
-					font-family: $pt-bold
-					letter-spacing: -0.2px
-		.__usps-priority
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
-			position: relative
-			min-width: 140px
-			.__main
-				text-align: center
-				.__svg
-					display: block
-					svg
-						width: 20px
-						height: 39px
-						g
-							path
-								fill: $dark-sea-green
-								stroke: $dark-sea-green
-				.__circle
-					width: 18px
-					height: 18px
-					background-color: $dark-sea-green
-					border-radius: 50px
-					display: block
-					margin: -2px auto 0
-				.__line
-					height: 168px
-					width: 3px
-					background-color: $dark-sea-green
-					display: inline-block
-					text-align: center
-					margin-left: 2px
-				.__name
-					margin-top: -5px
-					display: block
-					font-size: 20px
-					color: $white
-					font-family: $pt-bold
-					height: 84px
-					width: 84px
-					background-color: $dark-sea-green
-					border: 6px solid $dark-sea-green
-					border-radius: 500px
-					line-height: 71px
-					text-transform: uppercase
-					letter-spacing: -0.2px
-			.__title
-				position: absolute
-				right: -50px
-				top: 10px
-				.__price
-					display: block
-					letter-spacing: -0.3px
-					color: #818594
-					font-size: 25px
-					font-family: $pt-bold
-					opacity: 0.6
-					span
-						font-size: 34px
-						color: $cerise
-				.__delivery
-					margin-top: 4px
-					display: block
-					text-decoration: underline
-					font-size: 21px
-					color: $dark-sea-green
-					font-family: $pt-bold
-					letter-spacing: -0.2px
-		.__boxberry
-			margin-top: 80px
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
-			position: relative
-			justify-content: flex-end
-			min-width: 140px
-			.__main
-				text-align: center
-				.__svg
-					display: block
-					svg
-						width: 20px
-						height: 39px
-						g
-							path
-								fill: $cerise
-								stroke: $cerise
-				.__circle
-					width: 18px
-					height: 18px
-					background-color: $cerise
-					border-radius: 50px
-					display: block
-					margin: -2px auto 0
-				.__line
-					height: 142px
-					width: 3px
-					background-color: $cerise
-					display: inline-block
-					text-align: center
-					margin-left: 2px
-				.__name
-					margin-top: -5px
-					display: block
-					font-size: 14px
-					color: $white
-					font-family: $pt-bold
-					height: 84px
-					width: 84px
-					background-color: $cerise
-					border: 6px solid $cerise
-					border-radius: 500px
-					line-height: 71px
-					letter-spacing: -0.1px
-			.__title
-				position: absolute
-				left: -20px
-				top: 10px
-				.__price
-					display: block
-					letter-spacing: -0.3px
-					color: #818594
-					font-size: 25px
-					font-family: $pt-bold
-					opacity: 0.6
-					text-align: right
-					span
-						font-size: 34px
-						color: $cerise
-				.__delivery
-					margin-top: 4px
-					display: block
-					text-decoration: underline
-					font-size: 21px
-					color: $cerise
-					font-family: $pt-bold
-					letter-spacing: -0.2px
-		.__boxberry-delivery
-			margin-top: -30px
-			display: -webkit-flex
-			display: -moz-flex
-			display: -ms-flex
-			display: -o-flex
-			display: flex
-			margin-left: 50px
-			.__main
-				text-align: center
-				.__svg
-					display: block
-					svg
-						width: 20px
-						height: 39px
-						g
-							path
-								fill: $deep-sky-blue
-								stroke: $deep-sky-blue
-				.__circle
-					width: 18px
-					height: 18px
-					background-color: $deep-sky-blue
-					border-radius: 50px
-					display: block
-					margin: -2px auto 0
-				.__line
-					height: 142px
-					width: 3px
-					background-color: $deep-sky-blue
-					display: inline-block
-					text-align: center
-					margin-left: 2px
-				.__name
-					margin-top: -5px
-					display: block
-					font-size: 14px
-					color: $white
-					font-family: $pt-bold
-					height: 84px
-					width: 84px
-					background-color: $deep-sky-blue
-					border: 6px solid $deep-sky-blue
-					border-radius: 500px
-					line-height: 71px
-					letter-spacing: -0.1px
-			.__title
-				margin-left: -15px
-				margin-top: 10px
-				.__price
-					display: block
-					letter-spacing: -0.3px
-					color: #818594
-					font-size: 25px
-					font-family: $pt-bold
-					opacity: 0.6
-					span
-						font-size: 34px
-						color: $deep-sky-blue
-				.__delivery
-					margin-top: 4px
-					display: block
-					text-decoration: underline
-					font-size: 21px
-					color: $deep-sky-blue
-					font-family: $pt-bold
-					letter-spacing: -0.2px
-	.__container-info
-		margin-top: 55px
-		margin-bottom: 60px
-		display: -webkit-flex
-		display: -moz-flex
-		display: -ms-flex
-		display: -o-flex
-		display: flex
-		position: relative
-		z-index: 3
-		padding-right: 30px
-		padding-left: 30px
-		.circle-range-select-wrapper
-			padding: 0!important
-			width: 194px
-			height: 194px
-			border: 8px solid $dark-sea-green
-			text-align: center
-		.circle-range-select-wrapper .handle:before
-			background-color: $white
-			border: 2px solid $black
-			z-index: 10
-		.circle-range-select-wrapper .values
-			display: none
-		.__container-value
-			position: relative
-			border-radius: 1000px
-			position: relative
-			z-index: 6
-			&.weight
-				margin-right: auto
-				margin-left: 0px
-				padding-left: 20px
-				.__input-container
-					position: relative
-					right: -22px
-					top: -8px
-			.__title
-				font-size: 16px
-				color: $charcoal-grey
-				letter-spacing: -0.2px
-				font-family: $pt-bold
-				margin-bottom: 0
-				position: absolute
-				left: -15px
-				top: -10px
-			.__input-container
-				text-align: center
-				label
-					text-transform: uppercase
-					margin-bottom: 3px
-					font-size: 21px
-					font-family: $pt-bold
-					color: #818594
-					letter-spacing: -0.2px
-					position: absolute
-					top: 50%
-					left: -20px
-					transform: translateY(-50%)
-				input
-					border: none
-					outline: 0
-					background-color: transparent
-					font-size: 34px
-					font-family: $pt-bold
-					letter-spacing: -0.2px
-					max-width: 100%
-					color: $charcoal-grey
-					display: block
-					margin: 0 auto
-					position: absolute
-					top: 50%
-					left: 50%
-					transform: translateY(-50%) translateX(-50%)
-					max-width: 150px
-			&.price
-				text-align: right
-				margin-right: 50px
-				padding-right: 20px
-				.__input-container
-					position: relative
-					left: -5px
-					top: -8px
-				.__title
-					left: auto
-					right: -15px
-				.__input-container
-					input
-						text-align: right
-						&::-webkit-outer-spin-button
-							-webkit-appearance: none
-							-moz-appearance: none
-							appearance: none
-							margin: 0
-						&::-webkit-inner-spin-button
-							-webkit-appearance: none
-							-moz-appearance: none
-							appearance: none
-							margin: 0
-					label
-						left: auto
-						right: -10px
-						top: 50%
-		.container-info_bgi
-			position: absolute
-			top: 0
-			left: 50%
-			z-index: 7
-			max-width: 194px
-			max-height: 194px
-			transform: translateX(-50%)
-	.__info
-		position: absolute
-		top: 0
-		right: 0
-		color: #646773
-		font-size: 10px
-		font-family: $pt-bold
+		&:placeholder
+			color: #818594
+.calculator-page-content_main_prices-inputs_price
+	flex: 0 0 50%
+	border: 2px solid #c6c9d7
+	transition: 0.5s ease all
+	border-radius: 4px
+	padding: 16px
+	max-width: 50%
+	text-align: right
+	&.active
+		border-color: $dark-sea-green
+	.__title
+		margin-bottom: 14px
+		font-size: 14px
 		letter-spacing: -0.1px
-	.__output-range
-		position: absolute
-		top: 0
-		left: 0
-	.__input-range
-		-webkit-appearance: none
-		&::-webkit-range-progress
-			background-color: red
-		&:focus
-			outline: 0
-	input[type="range"]::-moz-range-progress
-		background-color: #43e5f7
-	input[type='range']
-		width: 520px
-		-webkit-appearance: none
-		background-color: $dark-sea-green
-	input[type='range']::-webkit-slider-runnable-track
-		height: 16px
-		-webkit-appearance: none
-		color: #13bba4
-		overflow: visible
-	input[type='range']::-webkit-slider-thumb
-		width: 31px
-		-webkit-appearance: none
-		z-index: 2
-		position: relative
-		top: -8px
-		border-radius: 150px
-		border: 3px solid $charcoal-grey
-		height: 31px
-		cursor: pointer
-		background: $white
-	input[type="range"]::-moz-range-progress
-		background-color: #43e5f7
-	input[type="range"]::-moz-range-track
-		background-color: #9a905d
-	input[type="range"]::-ms-fill-lower
-		background-color: #43e5f7
-	input[type="range"]::-ms-fill-upper
-		background-color: #9a905d
-.setyear
-	position: absolute
-	top: -20px
-	left: -40px
-	line-height: 38px
-	width: 38px
-	height: 38px
-	text-align: center
-	white-space: nowrap
-	font-size: 13.5px
-	font-family: $pt-bold
-	color: $white
-	background-color: $black
-	&:after
-		content: ''
-		width: 0
-		height: 0
-		border-style: solid
-		border-width: 5px 2.5px 0 2.5px
-		border-color: #000000 transparent transparent transparent
-		position: absolute
-		bottom: -5px
-		left: 50%
-		transform: translateX(-50%)
-.calculator-page-content_insur-info
-	max-width: 280px
-	.__content
-		font-size: 13.5px
+		color: #818594
+		font-family: $pt-bold
+		display: block
+	.__input
+		text-align: right
+		line-height: 40px
+		background-color: transparent
+		font-size: 34px
 		letter-spacing: -0.1px
 		color: $charcoal-grey
 		font-family: $pt-bold
+		border: none
+		outline: 0
+		display: inline-block
+		max-width: 88%
+		-webkit-appearance: none
+		-moz-appearance: none
+		&:placeholder
+			color: #818594
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button
+			-webkit-appearance: none
+			-moz-appearance: none
+	.__value
+		font-size: 28px
+		font-family: $pt-bold
+		color: #818594
+.calculator-page-content_main_button
+	display: block
+	position: relative
+	z-index: 5
+	.__btn
+		width: 100%
+		outline: 0
+		border: none
+		display: block
+		text-align: center
+		background-color: $cerise
+		color: $white
+		text-transform: uppercase
+		border-radius: 8px
+		letter-spacing: -0.2px
+		font-size: 16px
+		font-family: $pt-bold
+		padding: 16px 0
+.calculator-page-content_main_calculated
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+	margin-top: -10px
+	position: relative
+	z-index: 2
+	height: 300px
+	&.__open
+		.calculator-page-content_main_calculated_block
+			.block__price
+				opacity: 1
+.calculator-page-content_main_calculated_block
+	text-align: center
+	margin-right: 4px
+	flex: 0 0 24%
+	&:last-child
+		margin-right: 0
+	.__block-title
+		padding-top: 10px
+		height: 72px
+		position: relative
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: flex-end
+		justify-content: center
+		.__bglg
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			opacity: 0.1
+			background-image: linear-gradient(to bottom, $white, $charcoal-grey)
+		.__title
+			font-size: 14px
+			letter-spacing: -0.1px
+			color: $charcoal-grey
+			font-family: $pt-bold
+			span
+				font-size: 10px
+				font-family: $pt-reg
+				display: block
+	.block__price
+		max-height: 189px
+		color: $white
+		padding-top: 10px
+		text-align: center
+		padding-bottom: 10px
+		opacity: 0
+		height: 0
+		.__price
+			color: $white
+			font-family: $pt-bold
+			font-size: 22px
+			letter-spacing: -0.2px
+			span
+				font-size: 16px
+	&.usps-express
+		.__title
+			color: $charcoal-grey
+		.block__price
+			background-color: $charcoal-grey
+	&.usps-priority
+		.__title
+			color: $dark-sea-green
+		.block__price
+			background-color: $dark-sea-green
+	&.box-pickup
+		.__title
+			color: $cerise
+		.block__price
+			background-color: $cerise
+	&.box-courier
+		.__title
+			color: $deep-sky-blue
+		.block__price
+			background-color: $deep-sky-blue
+.calculator-page-content_insurance
+	flex: auto
+	margin-top: auto
+	margin-bottom: 280px
+	padding-left: 50px
+	max-width: 288px
+	.__content
+		font-size: 14px
+		font-family: $pt-bold
+		letter-spacing: -0.1px
+		color: $charcoal-grey
 // CALCULATOR PAGE ENDS
 @import "_animation.sass"
 @import "_hover.sass"
